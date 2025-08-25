@@ -1,35 +1,29 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect, useState } from "react";
+import { getProjects } from "./services/api";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    getProjects().then(data => setProjects(data));
+  }, []);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="p-6 text-center">
+      <h1 className="text-3xl font-bold text-blue-600 mb-4">
+        🚀 My Personal Website
+      </h1>
+      <p className="mb-6">This site is powered by React + FastAPI</p>
+      <h2 className="text-2xl font-semibold mb-2">Projects</h2>
+      <ul className="space-y-2">
+        {projects.map((proj, i) => (
+          <li key={i} className="border p-3 rounded shadow">
+            <strong>{proj.title}</strong> - {proj.tech}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 }
 
-export default App
+export default App;
