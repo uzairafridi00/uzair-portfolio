@@ -1,9 +1,3 @@
-Perfect 👍 I'll create you a **README.md** that documents everything we did step by step (backend with FastAPI, frontend with React + Tailwind, plus commands to run both).
-
-Here’s a clean version you can just copy-paste into your repo:
-
----
-
 # Personal Website (React + FastAPI)
 
 This project is a personal website showcasing expertise in **Machine Learning**, built with:
