@@ -66,3 +66,14 @@
 	font-family: system-ui;
 	color: #52525b;
 }
+
+.read-article-back-button {
+	width: 40px;
+	height: 40px;
+	transition: transform 0.2s ease-in-out;
+}
+
+.read-article-back-button:hover {
+	cursor: pointer; /* shows the hand pointer */
+	transform: scale(1.1); /* optional: makes it pop a bit */
+}
