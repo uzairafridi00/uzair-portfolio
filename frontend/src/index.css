@@ -1,8 +1,14 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@300&family=Roboto:wght@500&display=swap");
+@import "./data/styles.css";
 
 body {
-  font-family: sans-serif;
-  background-color: #f9fafb;
+	margin: 0;
+	font-family: var(--primary-font);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+		monospace;
 }

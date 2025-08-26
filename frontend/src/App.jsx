@@ -1,29 +1,38 @@
-import { useEffect, useState } from "react";
-import { getProjects } from "./services/api";
+import { useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
+import ReactGA from "react-ga4";
+
+import Homepage from "./pages/homepage";
+import About from "./pages/about";
+import Projects from "./pages/projects";
+import Articles from "./pages/articles";
+import ReadArticle from "./pages/readArticle";
+import Contact from "./pages/contact";
+import Notfound from "./pages/404";
+
+import { TRACKING_ID } from "./data/tracking";
+import "./app.css";
 
 function App() {
-  const [projects, setProjects] = useState([]);
+	useEffect(() => {
+		if (TRACKING_ID !== "") {
+			ReactGA.initialize(TRACKING_ID);
+		}
+	}, []);
 
-  useEffect(() => {
-    getProjects().then(data => setProjects(data));
-  }, []);
-
-  return (
-    <div className="p-6 text-center">
-      <h1 className="text-3xl font-bold text-blue-600 mb-4">
-        🚀 My Personal Website
-      </h1>
-      <p className="mb-6">This site is powered by React + FastAPI</p>
-      <h2 className="text-2xl font-semibold mb-2">Projects</h2>
-      <ul className="space-y-2">
-        {projects.map((proj, i) => (
-          <li key={i} className="border p-3 rounded shadow">
-            <strong>{proj.title}</strong> - {proj.tech}
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
+	return (
+		<div className="App">
+			<Routes>
+				<Route path="/" element={<Homepage />} />
+				<Route path="/about" element={<About />} />
+				<Route path="/projects" element={<Projects />} />
+				<Route path="/articles" element={<Articles />} />
+				<Route path="/article/:slug" element={<ReadArticle />} />
+				<Route path="/contact" element={<Contact />} />
+				<Route path="*" element={<Notfound />} />
+			</Routes>
+		</div>
+	);
 }
 
 export default App;
