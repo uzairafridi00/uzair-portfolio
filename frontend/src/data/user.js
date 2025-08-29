@@ -34,51 +34,50 @@ const INFO = {
 	},
 
 	projects: [
-		{
-			title: "Project 1",
-			description:
-				"Lorem ipsum dolor sit amet. Et incidunt voluptatem ex tempore repellendus qui dicta nemo sit deleniti minima.",
-			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
-			linkText: "View Project",
-			link: "https://github.com",
-		},
+  {
+    "title": "AI Civic Critic",
+    "description": "An AI system that analyzes government policies, social issues, and public services to provide constructive feedback and suggestions for improvement. Built with NLP and machine learning models.",
+    "logo": "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/python/python.png",
+    "linkText": "View Project",
+    "link": "https://github.com/uzairafridi00/machine-learning/tree/main/Projects/AI_CV_Critic"
+  },
+  {
+    "title": "YouTube RAG Chatbot",
+    "description": "A Retrieval-Augmented Generation (RAG) chatbot that lets users ask questions about YouTube videos. It retrieves context from transcripts and generates meaningful answers using LLMs.",
+    "logo": "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/python/python.png",
+    "linkText": "View Project",
+    "link": "https://github.com/uzairafridi00/machine-learning/tree/main/Projects/Youtube_RAG_chatbot"
+  },
+  {
+    "title": "Chat with PDFs",
+    "description": "An AI-powered tool that allows users to upload PDFs and interact with the content using natural language queries. It uses embeddings and LLMs to extract and summarize relevant information.",
+    "logo": "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/python/python.png",
+    "linkText": "View Project",
+    "link": "https://github.com/uzairafridi00/machine-learning/tree/main/Projects/chat_with_pdfs"
+  },
+  {
+    "title": "Chatbot in LangGraph",
+    "description": "A conversational AI built using LangGraph, designed to manage structured workflows for advanced chatbot interactions with memory, reasoning, and tool usage.",
+    "logo": "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/python/python.png",
+    "linkText": "View Project",
+    "link": "https://github.com/uzairafridi00/machine-learning/tree/main/Projects/chatbot-in-langgraph"
+  },
+  {
+    "title": "Text Emotion Detection",
+    "description": "A machine learning project that detects human emotions such as happiness, anger, sadness, and surprise from written text. Useful for sentiment analysis and customer feedback insights.",
+    "logo": "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/python/python.png",
+    "linkText": "View Project",
+    "link": "https://github.com/uzairafridi00/machine-learning/tree/main/Projects/Text_Emotion_Detection"
+  },
+  {
+    "title": "AI Gym Pose Detection",
+    "description": "A computer vision project that tracks gym workout poses using AI. It provides real-time feedback on posture and form to help users improve their exercise techniques.",
+    "logo": "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/python/python.png",
+    "linkText": "View Project",
+    "link": "https://github.com/uzairafridi00/machine-learning/tree/main/Projects/ai_gym_pose_estimation"
+  }
+],
 
-		{
-			title: "Project 2",
-			description:
-				"Lorem ipsum dolor sit amet. Et incidunt voluptatem ex tempore repellendus qui dicta nemo sit deleniti minima.",
-			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/python/python.png",
-			linkText: "View Project",
-			link: "https://github.com",
-		},
-
-		{
-			title: "Project 3",
-			description:
-				"Lorem ipsum dolor sit amet. Et incidunt voluptatem ex tempore repellendus qui dicta nemo sit deleniti minima.",
-			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/html/html.png",
-			linkText: "View Project",
-			link: "https://github.com",
-		},
-
-		{
-			title: "Project 4",
-			description:
-				"Lorem ipsum dolor sit amet. Et incidunt voluptatem ex tempore repellendus qui dicta nemo sit deleniti minima.",
-			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
-			linkText: "View Project",
-			link: "https://github.com",
-		},
-
-		{
-			title: "Project 5",
-			description:
-				"Lorem ipsum dolor sit amet. Et incidunt voluptatem ex tempore repellendus qui dicta nemo sit deleniti minima.",
-			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
-			linkText: "View Project",
-			link: "https://github.com",
-		},
-	],
 };
 
 export default INFO;

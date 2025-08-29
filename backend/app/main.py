@@ -1,21 +1,21 @@
+# backend/main.py
 from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
-from app.api import routes
+from database import SessionLocal, engine
+import models
+from routes import articles
 
-app = FastAPI(title="Personal Website API")
+models.Base.metadata.create_all(bind=engine)
 
-# Allow React frontend to call API
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],  # Change to ["http://localhost:5173"] for security
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+app = FastAPI(title="Blog API with SQLite")
 
-# Include routes
-app.include_router(routes.router)
+# Include Article Routes
+app.include_router(articles.router)
 
 @app.get("/")
 def root():
-    return {"message": "FastAPI backend is running 🚀"}
+    return {"message": "Welcome to Uzair Afridi's Blog API 🚀"}
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
+
