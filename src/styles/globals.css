@@ -1,0 +1,155 @@
+/* ============================================================
+   globals.css — All site-wide styles
+   To re-theme: change --accent and font imports below
+   ============================================================ */
+
+/* Google Fonts — EDIT: swap these for different typography */
+@import url('https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap');
+
+/* ── THEME VARIABLES ── */
+:root {
+  --bg:           #0d0d16;
+  --bg-nav:       rgba(13, 13, 22, 0.82);
+  --bg-card:      #121220;
+  --bg-border:    #1e1e30;
+  --accent:       #4f8ef7;          /* EDIT: change to your brand color */
+  --accent-glow:  rgba(79, 142, 247, 0.12);
+  --accent-ring:  rgba(79, 142, 247, 0.32);
+  --text:         #e2e2f0;
+  --text-muted:   #7878a0;
+  --text-dim:     #40405a;
+  --white:        #ffffff;
+  --head-font:    'Clash Display', sans-serif;
+  --body-font:    'DM Sans', sans-serif;
+  --radius:       10px;
+  --ease:         0.22s ease;
+  --max-w:        1120px;
+}
+
+:root[data-theme='light'] {
+  --bg:           #f8f9fa;
+  --bg-nav:       rgba(248, 249, 250, 0.82);
+  --bg-card:      #ffffff;
+  --bg-border:    #e2e4e8;
+  --text:         #1a1a2e;
+  --text-muted:   #5a5a75;
+  --text-dim:     #8a8a9a;
+  --white:        #0f0f1a;
+}
+
+/* ── RESET ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--body-font);
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+img { display: block; max-width: 100%; }
+a  { color: inherit; text-decoration: none; }
+
+/* Subtle grain overlay */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.5;
+}
+
+/* ── LAYOUT UTILITIES ── */
+.wrap {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.sec { padding: 96px 0; }
+
+/* ── TYPOGRAPHY ── */
+.sec-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+.sec-title {
+  font-family: var(--head-font);
+  font-size: clamp(26px, 3.8vw, 42px);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+.sec-sub {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.75;
+  max-width: 520px;
+}
+.rule {
+  width: 40px;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+  margin-bottom: 22px;
+}
+
+/* ── BUTTONS ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 7px;
+  font-family: var(--body-font);
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  transition: all var(--ease);
+}
+.btn-primary { background: var(--accent); color: #fff; }
+.btn-primary:hover {
+  filter: brightness(1.15);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px var(--accent-ring);
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1.5px solid var(--bg-border);
+}
+.btn-ghost:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* ── FADE-UP ANIMATION ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp 0.65s ease both; }
+.d1 { animation-delay: 0.05s; }
+.d2 { animation-delay: 0.15s; }
+.d3 { animation-delay: 0.25s; }
+.d4 { animation-delay: 0.35s; }
+.d5 { animation-delay: 0.45s; }
+
+/* ── RESPONSIVE BREAKPOINTS ── */
+@media (max-width: 640px) {
+  .sec { padding: 64px 0; }
+}

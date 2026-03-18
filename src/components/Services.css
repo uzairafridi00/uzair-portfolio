@@ -1,0 +1,95 @@
+.services__head {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: end;
+  margin-bottom: 56px;
+}
+
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* Service card */
+.service-card {
+  background: var(--bg-card);
+  border: 1px solid var(--bg-border);
+  border-radius: var(--radius);
+  padding: 30px;
+  transition: border-color var(--ease), transform var(--ease);
+  cursor: default;
+}
+.service-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+}
+.service-card__icon {
+  width: 46px; height: 46px;
+  background: var(--accent-glow);
+  border: 1px solid var(--accent-ring);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  margin-bottom: 18px;
+  color: var(--accent);
+}
+.service-card__title {
+  font-family: var(--head-font);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+.service-card__desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* Metrics bar */
+.services__metrics {
+  background: var(--bg-card);
+  border: 1px solid var(--bg-border);
+  border-radius: 14px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  overflow: hidden;
+  margin-top: 80px;
+}
+.metric-item {
+  padding: 34px 26px;
+  border-right: 1px solid var(--bg-border);
+  transition: background var(--ease);
+}
+.metric-item:last-child { border-right: none; }
+.metric-item:hover { background: var(--accent-glow); }
+.metric-item__num {
+  font-family: var(--head-font);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 6px;
+  line-height: 1;
+}
+.metric-item__label {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+@media (max-width: 1024px) {
+  .services__head    { grid-template-columns: 1fr; }
+  .services__grid    { grid-template-columns: 1fr; }
+  .services__metrics { grid-template-columns: repeat(2, 1fr); }
+  .metric-item:nth-child(2) { border-right: none; }
+  .metric-item:nth-child(3) { border-top: 1px solid var(--bg-border); }
+}
+@media (max-width: 640px) {
+  .services__metrics { grid-template-columns: 1fr; }
+  .metric-item { border-right: none; border-bottom: 1px solid var(--bg-border); }
+  .metric-item:last-child { border-bottom: none; }
+}
