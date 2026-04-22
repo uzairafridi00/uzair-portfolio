@@ -22,7 +22,7 @@ const Hero = () => {
           className="inline-flex items-center justify-center"
         >
           <Image
-            src="/img/profile-image.jpg"
+            src="/img/profile-image.jpeg"
             className="rounded-full mt-6"
             alt="profile logo"
             width={114}
@@ -37,11 +37,11 @@ const Hero = () => {
           className=""
         >
           <h1 className="font-bold md:leading-14 leading-8 md:text-[56px] text-[28px] mt-6">
-            Hi, I&apos;m Adebanjo Stephen.
-            <br /> Software Engineer
+            Hi, I&apos;m Uzair Afridi.
+            <br /> ML/AI Engineer
           </h1>
           <h3 className="text-gray-600 mt-4 flex-wrap md:px-0 px-4">
-            Relentless self-taught developer, passionate about crafting Next.js
+            Relentless self-taught developer, passionate about crafting AI
             solutions,
             <br />
             and driven to grow in tech.

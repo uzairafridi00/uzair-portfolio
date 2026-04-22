@@ -85,14 +85,14 @@ const About = () => {
             className="py-2 px-3 bg-white shadow-sm rounded-sm w-fit"
           >
             <Image
-              src="/img/profile-pic.jpg"
+              src="/img/profile-pic.png"
               width={200}
               height={200}
               alt="profile image"
               className="rounded-sm bg-white w-full max-w-[200px]"
             />
             <span className="text-sm block text-center mt-1 text-gray-800">
-              @midecode
+              @uzairafridi00
             </span>
           </motion.div>
         </motion.div>
