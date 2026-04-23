@@ -20,48 +20,20 @@ const About = () => {
           className=""
         >
           <div className="font-bold text-3xl text-black/90">About</div>
+          <div className="font-bold text-3xl text-black/90">About</div>
           <p>
-            I&apos;m Adebanjo Stephen, a passionate 17-year-old self-taught
-            Nigerian software engineer and an aspiring AI & Machine Language
-            Expert with over 2yr +2 months of experience and a strong drive for
-            building impactful web experiences.
+            I’m an AI Engineer with a strong focus on building real-world systems using large language models, RAG pipelines, and agent-based architectures. With hands-on experience designing and deploying production-ready AI solutions, I enjoy turning complex ideas into scalable, practical applications.
           </p>
           <p className="mt-2">
-            At 17, I’ve already built and shipped real-world AI products and I’m just getting started. I love solving
-            real problems through tech, learning fast, and creating beautiful,
-            high-performing user interfaces.
+            I’ve worked on end-to-end AI products, from data ingestion and retrieval to API development and deployment. My work combines LLM engineering, backend systems, and performance optimization, with a constant focus on improving accuracy, reducing latency, and delivering reliable results.
           </p>
           <p className="mt-2">
-            I’m currently working with{" "}
-            <Link
-              href="https://www.linkedin.com/company/externhq/posts/?feedView=all"
-              className="hover:text-green-900"
-            >
-              <strong>Extern</strong>
-            </Link>{" "}
-            on advanced full-stack projects, diving deeper into AI, and actively
-            preparing to land a role at a world-class company like{" "}
-            <strong>Google</strong>. I’m also open to freelance and
-            collaboration opportunities.
+            I’m driven by fast iteration, solving meaningful problems, and building AI systems that create real impact. I’m continuously exploring new advancements in the AI space and pushing myself to build better, smarter systems.
           </p>
           <p className="mt-2">
             I’m also actively building my presence in the tech community. With
-            over <strong>200+ followers on X, </strong>
-            I’ve learned and connected with top minds, mentors in the indie
-            hacker and maker space — including people like{" "}
-            <Link href="https://x.com/marc_louvion">
-              <strong>@Marc Lou,</strong>
-            </Link>{" "}
-            <Link href="https://x.com/johnrushx">
-              <strong>@johnrushx,</strong>
-            </Link>{" "}
-            <Link href="https://x.com/tdinh_me">
-              <strong>@tdinh_me,</strong>
-            </Link>{" "}
-            and{" "}
-            <Link href="https://x.com/levelsio">
-              <strong>@levelsio.</strong>
-            </Link>{" "}
+            over <strong>4K followers on LinkedIn, </strong>
+            I’ve learned and connected with top minds and mentors.
             Their guidance and content have helped shape how I think about
             product-building, growth, and shipping fast.
           </p>
@@ -69,7 +41,7 @@ const About = () => {
       </div>
 
       <Link
-        href="https://www.linkedin.com/in/stephen-adebanjo-82a6ba359/"
+        href="https://www.linkedin.com/in/uzair-afridi00/"
         target="_blank"
       >
         <motion.div
