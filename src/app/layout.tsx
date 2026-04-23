@@ -13,27 +13,25 @@ const geistSans = Geist({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://myportfoliome.vercel.app"),
-  title: "Adebanjo Stephen | Software Engineer",
+  title: "Uzair Afridi | AI/ML Engineer",
   description:
-    "Self-taught software engineer and entrepreneur, specializing in Frontend, Backend, Full-stack development with Next.js, JavaScript, and TypeScript. As the founder of StartupFounder, a platform connecting developers and showcasing startups, I'm is dedicated to fostering innovation and community within the tech industry.",
+    "Self-taught software engineer and entrepreneur, specializing in Machine Learning and Artificial Intelligence.",
   keywords: [
-    "Self-taught",
-    "Software Engineer",
-    "Web Development",
-    "Entrepreneur",
-    "Backend",
-    "Full-stack",
-    "Frontend developer",
-    "Next.js",
-    "JavaScript",
-    "TypeScript",
-    "Tech innovation",
-    "Community building",
-    "Adebanjo Stephen",
+    "AI Engineer",
+    "ML Engineer",
+    "Uzair Afridi",
+    "Uzair",
+    "Afridi",
+    "AI",
+    "ML",
+    "Machine Learning",
+    "Artificial Intelligence",
+    "AI/ML Engineer",
+    "AI/ML",
   ],
-  authors: [{ name: "Adebanjo Stephen" }],
-  creator: "Adebanjo Stephen",
-  publisher: "Adebanjo Stephen",
+  authors: [{ name: "Uzair Afridi" }],
+  creator: "Uzair Afridi",
+  publisher: "Uzair Afridi",
   formatDetection: { email: false, address: false, telephone: false },
   icons: {
     icon: "/profile-image.jpg",
@@ -44,25 +42,25 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://myportfoliome.vercel.app",
-    siteName: "Adebanjo Stephen Portfolio",
-    title: "Adebanjo Stephen | Software Engineer",
+    siteName: "Uzair Afridi Portfolio",
+    title: "Uzair Afridi | AI/ML Engineer",
     description:
-      "Self-taught software engineer and entrepreneur, specializing in Frontend, Backend, Full-stack development with Next.js, JavaScript, and TypeScript. As the founder of StartupFounder, a platform connecting developers and showcasing startups, I'm is dedicated to fostering innovation and community within the tech industry.",
+      "Self-taught software engineer and entrepreneur, specializing in Machine Learning and Artificial Intelligence.",
     images: [
       {
         url: "https://myportfoliome.vercel.app/img/profile-pic.jpg",
         width: 1200,
         height: 630,
-        alt: "Adebanjo Stephen | Software Engineer",
+        alt: "Uzair Afridi | AI/ML Engineer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Adebanjo Stephen | Software Engineer",
+    title: "Uzair Afridi | AI/ML Engineer",
     description:
-      "Self-taught software engineer and entrepreneur, specializing in Frontend, Backend, Full-stack development with Next.js, JavaScript, and TypeScript.",
-    creator: "@AdebanjoSt63916",
+      "Self-taught software engineer and entrepreneur, specializing in Machine Learning and Artificial Intelligence.",
+    creator: "@uzair__afridi",
     images: ["https://myportfoliome.vercel.app/img/profile-pic.jpg"],
   },
   robots: {
@@ -83,7 +81,7 @@ export const metadata: Metadata = {
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "Adebanjo Stephen Olumide",
+    title: "Uzair Afridi",
   },
 };
 
@@ -93,14 +91,14 @@ export const metadata: Metadata = {
     __html: JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Person",
-      name: "Adebanjo Stephen",
+      name: "Uzair Afridi",
       url: "https://myportfoliome.vercel.app",
       image: "https://myportfoliome.vercel.app/img/profile-pic.jpg",
       sameAs: [
-        "https://github.com/SteeveSticks",
-        "https://x.com/AdebanjoSt63916",
+        "https://github.com/uzairafridi00",
+        "https://x.com/uzair__afridi",
       ],
-      jobTitle: "Software Engineer",
+      jobTitle: "AI/ML Engineer",
       worksFor: {
         "@type": "Organization",
         name: "StartupFounder",
