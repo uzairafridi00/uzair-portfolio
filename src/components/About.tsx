@@ -20,7 +20,6 @@ const About = () => {
           className=""
         >
           <div className="font-bold text-3xl text-black/90">About</div>
-          <div className="font-bold text-3xl text-black/90">About</div>
           <p>
             I’m an AI Engineer with a strong focus on building real-world systems using large language models, RAG pipelines, and agent-based architectures. With hands-on experience designing and deploying production-ready AI solutions, I enjoy turning complex ideas into scalable, practical applications.
           </p>
