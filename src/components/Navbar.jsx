@@ -22,11 +22,10 @@ export default function Navbar({ dark, toggleDark, data }) {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
           ? 'bg-ink-50/90 dark:bg-ink-950/90 backdrop-blur-md border-b border-ink-200/60 dark:border-ink-800/60'
           : 'bg-transparent'
-      }`}
+        }`}
     >
       <nav className="max-w-6xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
         {/* Logo */}
@@ -35,7 +34,7 @@ export default function Navbar({ dark, toggleDark, data }) {
           className="font-display font-700 text-lg tracking-tight text-ink-950 dark:text-ink-50"
           aria-label="Go to top"
         >
-          <span className="text-accent-500">_</span>alex
+          <span className="text-accent-500">_</span>uzair
         </button>
 
         {/* Desktop Nav */}
@@ -44,11 +43,10 @@ export default function Navbar({ dark, toggleDark, data }) {
             <li key={id}>
               <button
                 onClick={() => scrollTo(id)}
-                className={`px-4 py-2 text-sm font-body font-medium capitalize rounded-lg transition-all duration-200 ${
-                  active === id
+                className={`px-4 py-2 text-sm font-body font-medium capitalize rounded-lg transition-all duration-200 ${active === id
                     ? 'text-ink-950 dark:text-ink-50 bg-ink-100 dark:bg-ink-800'
                     : 'text-ink-500 dark:text-ink-400 hover:text-ink-800 dark:hover:text-ink-200 hover:bg-ink-100 dark:hover:bg-ink-800/50'
-                }`}
+                  }`}
               >
                 {id}
               </button>
@@ -92,11 +90,10 @@ export default function Navbar({ dark, toggleDark, data }) {
               <li key={id}>
                 <button
                   onClick={() => scrollTo(id)}
-                  className={`w-full text-left px-4 py-2.5 text-sm font-body font-medium capitalize rounded-lg transition-colors ${
-                    active === id
+                  className={`w-full text-left px-4 py-2.5 text-sm font-body font-medium capitalize rounded-lg transition-colors ${active === id
                       ? 'text-ink-950 dark:text-ink-50 bg-ink-100 dark:bg-ink-800'
                       : 'text-ink-500 dark:text-ink-400'
-                  }`}
+                    }`}
                 >
                   {id}
                 </button>

@@ -80,9 +80,9 @@ export default function Contact({ data }) {
               <div className="font-display font-600 text-sm uppercase tracking-widest text-ink-400 dark:text-ink-500 mb-4">Find me on</div>
               <div className="flex flex-col gap-3">
                 {[
-                  { href: social.github, Icon: Github, label: 'GitHub', handle: '@alexchen' },
-                  { href: social.linkedin, Icon: Linkedin, label: 'LinkedIn', handle: 'in/alexchen' },
-                  { href: social.twitter, Icon: Twitter, label: 'Twitter', handle: '@alexchen_ml' },
+                  { href: social.github, Icon: Github, label: 'GitHub', handle: '@uzairafridi00' },
+                  { href: social.linkedin, Icon: Linkedin, label: 'LinkedIn', handle: 'in/uzair-afridi00' },
+                  { href: social.twitter, Icon: Twitter, label: 'Twitter', handle: '@uzair__afridi' },
                 ].map(({ href, Icon, label, handle }) => (
                   <a
                     key={label}
@@ -145,7 +145,7 @@ export default function Contact({ data }) {
 
                 <div>
                   <textarea
-                    rows={5}
+                    rows={7}
                     placeholder="What's on your mind?"
                     value={form.message}
                     onChange={e => setForm(f => ({ ...f, message: e.target.value }))}
