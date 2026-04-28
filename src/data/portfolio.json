@@ -1,0 +1,118 @@
+{
+  "personal": {
+    "name": "Alex Chen",
+    "title": "ML / AI Engineer",
+    "tagline": "I build systems that learn, reason, and solve real problems.",
+    "bio": "I'm a Machine Learning Engineer with 5+ years of experience designing and deploying AI systems at scale. My work spans LLM fine-tuning, computer vision pipelines, and production ML infrastructure. I care deeply about bridging research and real-world impact — turning frontier ideas into reliable, maintainable systems.",
+    "location": "San Francisco, CA",
+    "email": "alex@example.com",
+    "cvUrl": "/alex-chen-cv.pdf"
+  },
+  "social": {
+    "github": "https://github.com",
+    "linkedin": "https://linkedin.com",
+    "twitter": "https://twitter.com"
+  },
+  "experience": [
+    {
+      "role": "Senior ML Engineer",
+      "company": "Anthropic",
+      "period": "2022 – Present",
+      "highlight": "RLHF pipelines & alignment research infrastructure"
+    },
+    {
+      "role": "ML Engineer",
+      "company": "Scale AI",
+      "period": "2020 – 2022",
+      "highlight": "Data pipeline automation and model evaluation frameworks"
+    },
+    {
+      "role": "Research Engineer",
+      "company": "Stanford AI Lab",
+      "period": "2019 – 2020",
+      "highlight": "Computer vision and embodied AI research"
+    }
+  ],
+  "skills": {
+    "domains": [
+      "Large Language Models",
+      "Reinforcement Learning",
+      "Computer Vision",
+      "NLP & Text Generation",
+      "MLOps & Deployment",
+      "Model Fine-tuning"
+    ],
+    "stack": [
+      { "name": "Python", "category": "lang" },
+      { "name": "PyTorch", "category": "ml" },
+      { "name": "HuggingFace", "category": "ml" },
+      { "name": "JAX", "category": "ml" },
+      { "name": "LangChain", "category": "llm" },
+      { "name": "OpenAI API", "category": "llm" },
+      { "name": "FastAPI", "category": "infra" },
+      { "name": "Docker", "category": "infra" },
+      { "name": "Kubernetes", "category": "infra" },
+      { "name": "AWS", "category": "cloud" },
+      { "name": "GCP", "category": "cloud" },
+      { "name": "W&B", "category": "tools" },
+      { "name": "Ray", "category": "infra" },
+      { "name": "CUDA", "category": "tools" }
+    ]
+  },
+  "projects": [
+    {
+      "id": 1,
+      "title": "NeuralSearch",
+      "description": "Semantic search engine powered by bi-encoder retrieval and cross-encoder reranking. Indexes 10M+ documents with sub-100ms latency using HNSW indexing and quantization.",
+      "tags": ["PyTorch", "FAISS", "FastAPI", "React"],
+      "github": "https://github.com",
+      "demo": "https://demo.example.com",
+      "featured": true
+    },
+    {
+      "id": 2,
+      "title": "FineTuner Studio",
+      "description": "Open-source GUI for fine-tuning LLMs with LoRA and QLoRA. Supports Llama, Mistral, and Phi. One-click dataset preparation, training, and GGUF export.",
+      "tags": ["Python", "HuggingFace", "LoRA", "Gradio"],
+      "github": "https://github.com",
+      "demo": null,
+      "featured": true
+    },
+    {
+      "id": 3,
+      "title": "VisionPipeline",
+      "description": "Production-grade real-time object detection and tracking system. Processes 60 FPS video streams using YOLO + DeepSORT with ONNX runtime optimization.",
+      "tags": ["YOLO", "ONNX", "OpenCV", "Kafka"],
+      "github": "https://github.com",
+      "demo": "https://demo.example.com",
+      "featured": false
+    },
+    {
+      "id": 4,
+      "title": "AgentBench",
+      "description": "Evaluation harness for LLM agents on multi-step reasoning tasks. Includes 40+ task templates spanning code generation, tool use, and planning.",
+      "tags": ["Python", "LangChain", "GPT-4", "SQLite"],
+      "github": "https://github.com",
+      "demo": null,
+      "featured": false
+    },
+    {
+      "id": 5,
+      "title": "EmbedDB",
+      "description": "Lightweight vector database written in pure Python. Supports cosine, dot-product, and Euclidean similarity. Designed for prototyping RAG systems without infrastructure overhead.",
+      "tags": ["Python", "NumPy", "Pydantic"],
+      "github": "https://github.com",
+      "demo": null,
+      "featured": false
+    },
+    {
+      "id": 6,
+      "title": "ChartReader",
+      "description": "Multimodal model that extracts structured data from scientific charts and plots. Fine-tuned on a curated dataset of 50K chart-data pairs. Achieves 91% accuracy on ChartQA.",
+      "tags": ["Vision-LM", "PyTorch", "Transformers"],
+      "github": "https://github.com",
+      "demo": "https://demo.example.com",
+      "featured": true
+    }
+  ]
+}
