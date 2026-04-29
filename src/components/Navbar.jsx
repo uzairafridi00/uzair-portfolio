@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { Github, Linkedin, Twitter, Menu, X, Moon, Sun, Download } from 'lucide-react'
 import { useScrollSpy } from '../hooks/useScrollSpy'
 
-const NAV_ITEMS = ['home', 'about', 'projects', 'contact']
+const NAV_ITEMS = ['home', 'about', 'projects', 'gallery', 'certificates', 'contact']
 
 export default function Navbar({ dark, toggleDark, data }) {
   const [open, setOpen] = useState(false)

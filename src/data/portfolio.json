@@ -178,5 +178,41 @@
       "demo": null,
       "featured": false
     }
+  ],
+  "gallery": [
+    {
+      "id": 1,
+      "title": "Agentic AI Research Assistant",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1000",
+      "description": "Real-time AI research assistant UI and autonomous agents in action."
+    },
+    {
+      "id": 2,
+      "title": "VisionPipeline / Cafe Analytics",
+      "image": "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&q=80&w=1000",
+      "description": "Real-time object detection system processing video using YOLO."
+    },
+    {
+      "id": 3,
+      "title": "Smart Finance Assistant",
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000",
+      "description": "Interactive visualizations and intelligent spending analysis."
+    }
+  ],
+  "certificates": [
+    {
+      "id": 1,
+      "title": "Machine Learning Specialization",
+      "issuer": "Stanford University / Coursera",
+      "date": "2023",
+      "image": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=1000"
+    },
+    {
+      "id": 2,
+      "title": "Deep Learning Specialization",
+      "issuer": "deeplearning.ai",
+      "date": "2024",
+      "image": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=1000"
+    }
   ]
 }
