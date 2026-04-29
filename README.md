@@ -7,6 +7,8 @@
 ![TailwindCSS](https://img.shields.io/badge/Tailwind-3.4-38BDF8?style=flat&logo=tailwindcss)
 ![License](https://img.shields.io/badge/license-MIT-green?style=flat)
 
+Live Preview: https://uzairafridi00.github.io/uzair-portfolio/
+
 ---
 
 ## Table of Contents
