@@ -53,7 +53,7 @@ export default function Contact({ data }) {
     <section id="contact" ref={sectionRef} className="py-24 sm:py-32">
       <div className="max-w-6xl mx-auto px-5 sm:px-8">
         <div className="c-reveal opacity-0 translate-y-6 transition-all duration-500 mb-16">
-          <div className="font-mono text-xs text-accent-500 tracking-widest uppercase mb-3">04 / contact</div>
+          <div className="font-mono text-xs text-accent-500 tracking-widest uppercase mb-3">contact</div>
           <h2 className="font-display font-700 text-4xl sm:text-5xl text-ink-950 dark:text-ink-50 tracking-tight">
             Let's build something<br />
             <span className="text-ink-400 dark:text-ink-600">worth remembering.</span>

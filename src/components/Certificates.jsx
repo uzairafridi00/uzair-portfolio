@@ -30,7 +30,7 @@ export default function Certificates({ data }) {
       <div className="max-w-6xl mx-auto px-5 sm:px-8">
         {/* Header */}
         <div className="cert-reveal opacity-0 translate-y-6 transition-all duration-500 mb-12">
-          <div className="font-mono text-xs text-accent-500 tracking-widest uppercase mb-3">08 / certificates</div>
+          <div className="font-mono text-xs text-accent-500 tracking-widest uppercase mb-3">certificates</div>
           <div className="flex flex-wrap items-end justify-between gap-6">
             <h2 className="font-display font-700 text-4xl sm:text-5xl text-ink-950 dark:text-ink-50 tracking-tight">
               Certifications.
@@ -39,39 +39,42 @@ export default function Certificates({ data }) {
         </div>
 
         {/* Grid */}
-        <div className="grid sm:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 gap-8 lg:gap-10">
           {certificates.map((cert, i) => (
             <div key={cert.id} className="cert-reveal opacity-0 translate-y-6 transition-all duration-500">
               <article
-                className="group relative flex flex-col md:flex-row bg-ink-50 dark:bg-ink-900 border border-ink-200 dark:border-ink-800 rounded-2xl overflow-hidden hover:border-ink-400 dark:hover:border-ink-600 hover:shadow-xl hover:shadow-ink-950/5 dark:hover:shadow-ink-950/40 transition-all duration-300 hover:-translate-y-1 h-full"
+                className="group relative flex flex-col md:flex-row bg-ink-50 dark:bg-ink-900 border border-ink-200 dark:border-ink-800 rounded-3xl overflow-hidden hover:border-ink-400 dark:hover:border-ink-600 hover:shadow-xl hover:shadow-ink-950/5 dark:hover:shadow-ink-950/40 transition-all duration-300 hover:-translate-y-1"
                 style={{ animationDelay: `${i * 0.07}s` }}
               >
-                <div className="md:w-2/5 aspect-video md:aspect-square overflow-hidden bg-ink-200 dark:bg-ink-800 shrink-0">
+                {/* Image Section */}
+                <div className="md:w-3/5 lg:w-2/3 bg-ink-200/50 dark:bg-ink-950/50 p-6 sm:p-8 lg:p-10 flex items-center justify-center border-b md:border-b-0 md:border-r border-ink-200 dark:border-ink-800 shrink-0">
                   <img
                     src={cert.image}
                     alt={cert.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="w-full h-auto max-h-[500px] lg:max-h-[700px] object-contain rounded-lg shadow-sm border border-ink-200/60 dark:border-ink-700/60 transition-transform duration-700 group-hover:scale-[1.02]"
                   />
                 </div>
-                <div className="p-6 flex flex-col flex-1 justify-center">
-                  <div className="font-mono text-xs text-ink-400 dark:text-ink-500 mb-2">
+
+                {/* Content Section */}
+                <div className="p-8 lg:p-12 flex flex-col flex-1 justify-center md:w-2/5 lg:w-1/3">
+                  <div className="font-mono text-sm text-accent-500 mb-3">
                     {cert.date}
                   </div>
-                  <h3 className="font-display font-700 text-lg text-ink-950 dark:text-ink-50 mb-1 group-hover:text-accent-500 transition-colors">
+                  <h3 className="font-display font-700 text-2xl lg:text-3xl text-ink-950 dark:text-ink-50 mb-4 group-hover:text-accent-500 transition-colors">
                     {cert.title}
                   </h3>
-                  <p className="font-body text-sm text-ink-500 dark:text-ink-400 mb-4">
+                  <p className="font-body text-base lg:text-lg text-ink-600 dark:text-ink-400 mb-8">
                     {cert.issuer}
                   </p>
                   {cert.link && (
-                    <div className="mt-auto pt-2">
+                    <div className="mt-auto pt-4 border-t border-ink-200 dark:border-ink-800">
                       <a
                         href={cert.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-xs font-body text-accent-500 hover:text-accent-600 transition-colors"
+                        className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-ink-950 dark:bg-ink-50 text-ink-50 dark:text-ink-950 text-sm font-body font-medium transition-all hover:bg-ink-800 dark:hover:bg-ink-200 hover:shadow-lg hover:shadow-ink-950/20"
                       >
-                        <ExternalLink size={13} />
+                        <ExternalLink size={16} />
                         View Credential
                       </a>
                     </div>

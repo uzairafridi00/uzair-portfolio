@@ -6,7 +6,7 @@
     "bio": "I'm a Machine Learning Engineer with 5+ years of experience designing and deploying AI systems at scale. My work spans LLM fine-tuning, computer vision pipelines, and production ML infrastructure. I care deeply about bridging research and real-world impact — turning frontier ideas into reliable, maintainable systems.",
     "location": "Riyadh, KSA",
     "email": "uzairafrididev@gmail.com",
-    "cvUrl": "/muhammad_uzair_afridi_cv.pdf"
+    "cvUrl": "muhammad_uzair_afridi_cv.pdf"
   },
   "social": {
     "github": "https://github.com/uzairafridi00",
@@ -202,17 +202,73 @@
   "certificates": [
     {
       "id": 1,
-      "title": "Machine Learning Specialization",
-      "issuer": "Stanford University / Coursera",
-      "date": "2023",
-      "image": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=1000"
+      "title": "Introduction to Tensorflow",
+      "issuer": "Deep Learning AI",
+      "date": "2025",
+      "image": "certificates/m_uzair_afridi_intro_to_tensorflow.jpg"
     },
     {
       "id": 2,
-      "title": "Deep Learning Specialization",
-      "issuer": "deeplearning.ai",
+      "title": "Python for Machine Learning",
+      "issuer": "Dice Camp & Dice Analytics",
       "date": "2024",
-      "image": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=1000"
+      "image": "certificates/m_uzair_afridi_dicecamp.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Supervised Machine Learning",
+      "issuer": "Deep Learning AI",
+      "date": "2024",
+      "image": "certificates/m_uzair_afridi_supervise_ml.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Google Developer Student Club Lead",
+      "issuer": "Google",
+      "date": "2023",
+      "image": "certificates/m_uzair_afridi_gdsc.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Microsoft Learn Student Ambassador",
+      "issuer": "Microsoft",
+      "date": "2023",
+      "image": "certificates/m_uzair_afridi_mlsa.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Git and GitHub",
+      "issuer": "365 Data Science",
+      "date": "2023",
+      "image": "certificates/m_uzair_afridi_git.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Introduction to Data Science",
+      "issuer": "IBM",
+      "date": "2023",
+      "image": "certificates/m_uzair_afridi_intro_to_DS.jpg"
+    },
+    {
+      "id": 8,
+      "title": "Software Architecture",
+      "issuer": "University of Alberta",
+      "date": "2023",
+      "image": "certificates/m_uzair_afridi_soft_architecture.jpg"
+    },
+    {
+      "id": 9,
+      "title": "IM Computing and Innovation Society",
+      "issuer": "IMCIS",
+      "date": "2022",
+      "image": "certificates/m_uzair_afridi_imcis.png"
+    },
+    {
+      "id": 10,
+      "title": "Building AI Powered Chatbots",
+      "issuer": "IBM",
+      "date": "2021",
+      "image": "certificates/m_uzair_afridi_ibm_ai.jpg"
     }
   ]
 }

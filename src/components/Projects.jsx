@@ -33,7 +33,7 @@ export default function Projects({ data }) {
       <div className="max-w-6xl mx-auto px-5 sm:px-8">
         {/* Header */}
         <div className="proj-reveal opacity-0 translate-y-6 transition-all duration-500 mb-12">
-          <div className="font-mono text-xs text-accent-500 tracking-widest uppercase mb-3">06 / projects</div>
+          <div className="font-mono text-xs text-accent-500 tracking-widest uppercase mb-3">projects</div>
           <div className="flex flex-wrap items-end justify-between gap-6">
             <h2 className="font-display font-700 text-4xl sm:text-5xl text-ink-950 dark:text-ink-50 tracking-tight">
               Things I've built.

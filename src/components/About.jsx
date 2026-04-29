@@ -2,9 +2,9 @@ import { useEffect, useRef } from 'react'
 import { MapPin, Briefcase } from 'lucide-react'
 
 const CATEGORY_STYLE = {
-  lang:  'bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300 border-violet-200 dark:border-violet-800',
-  ml:    'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-800',
-  llm:   'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 border-amber-200 dark:border-amber-800',
+  lang: 'bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300 border-violet-200 dark:border-violet-800',
+  ml: 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-800',
+  llm: 'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 border-amber-200 dark:border-amber-800',
   infra: 'bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800',
   cloud: 'bg-sky-100 dark:bg-sky-900/30 text-sky-700 dark:text-sky-300 border-sky-200 dark:border-sky-800',
   tools: 'bg-rose-100 dark:bg-rose-900/30 text-rose-700 dark:text-rose-300 border-rose-200 dark:border-rose-800',
@@ -48,7 +48,7 @@ export default function About({ data }) {
       <div className="max-w-6xl mx-auto px-5 sm:px-8">
         {/* Section header */}
         <div className="reveal opacity-0 translate-y-6 transition-all duration-500 mb-16">
-          <div className="font-mono text-xs text-accent-500 tracking-widest uppercase mb-3">02 / about</div>
+          <div className="font-mono text-xs text-accent-500 tracking-widest uppercase mb-3">about</div>
           <h2 className="font-display font-700 text-4xl sm:text-5xl text-ink-950 dark:text-ink-50 tracking-tight">
             Crafting intelligence,<br />
             <span className="text-ink-400 dark:text-ink-600">one model at a time.</span>
@@ -141,11 +141,10 @@ export default function About({ data }) {
               {Array.from({ length: 9 }).map((_, i) => (
                 <div
                   key={i}
-                  className={`rounded-xl h-20 ${
-                    i % 3 === 0 ? 'bg-ink-100 dark:bg-ink-900' :
+                  className={`rounded-xl h-20 ${i % 3 === 0 ? 'bg-ink-100 dark:bg-ink-900' :
                     i % 3 === 1 ? 'bg-ink-50 dark:bg-ink-950' :
-                    'bg-accent-400/10 dark:bg-accent-500/10'
-                  } ${i === 4 ? 'flex items-center justify-center' : ''}`}
+                      'bg-accent-400/10 dark:bg-accent-500/10'
+                    } ${i === 4 ? 'flex items-center justify-center' : ''}`}
                 >
                   {i === 4 && (
                     <div className="font-display font-700 text-2xl text-accent-500">AI</div>
