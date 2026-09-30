@@ -1,61 +1,130 @@
 {
   "posts": [
     {
-      "slug": "writing-posts-for-this-blog",
-      "title": "Writing Posts for This Blog",
-      "date": "2026-09-29",
-      "summary": "A reference post showing every content block the blog supports, from headings and lists to code, quotes and images.",
-      "tags": ["Meta", "Guide"],
+      "slug": "technical-debt-in-the-age-of-ai",
+      "title": "Technical Debt in the Age of AI",
+      "date": "2026-09-30",
+      "summary": "Every time you use AI to generate code, you're taking on technical debt. The question isn't whether to avoid it, but whether it's good debt or bad debt.",
+      "tags": [
+        "AI",
+        "Software Engineering"
+      ],
       "draft": false,
       "content": [
         {
           "type": "paragraph",
-          "text": "Every post on this site lives in `src/data/blogs.json`. Each one is a list of **content blocks**, and this post uses each block type once so you can copy whatever you need."
+          "text": "Every time you use AI to generate code, you're taking on technical debt. The question isn't whether to avoid it entirely, that's impossible. The question is: **are you taking on good debt or bad debt?**"
         },
-        { "type": "heading", "text": "Inline formatting" },
         {
           "type": "paragraph",
-          "text": "Inside any text you can write **bold**, *italic*, `inline code`, and [links](https://github.com/uzairafridi00). Links starting with `/` stay inside the site, like [the blog index](/blog)."
-        },
-        { "type": "heading", "level": 3, "text": "Lists" },
-        {
-          "type": "list",
-          "items": [
-            "Set `ordered` to `true` for a numbered list",
-            "Each item supports **inline formatting** too",
-            "Keep items short, one idea each"
-          ]
+          "text": "I use AI assistants every day, for everything from boilerplate to test scaffolding to the odd tricky regex. They've made me faster. They've also left behind code I didn't fully understand until something broke at the worst possible time. Both of those things are true, and pretending otherwise doesn't help anyone."
         },
         {
-          "type": "list",
-          "ordered": true,
-          "items": ["Write the post", "Set `draft` to `false`", "Run `npm run deploy`"]
+          "type": "heading",
+          "text": "Code you didn't write is still code you own"
         },
-        { "type": "heading", "text": "Code" },
         {
-          "type": "code",
-          "language": "python",
-          "code": "from vllm import LLM, SamplingParams\n\nllm = LLM(model=\"Qwen/Qwen2.5-7B-Instruct\")\nout = llm.generate([\"Hello!\"], SamplingParams(max_tokens=64))\nprint(out[0].outputs[0].text)"
+          "type": "paragraph",
+          "text": "Technical debt was never just about messy code. Ward Cunningham's original metaphor was about the gap between what the code does and what you *understand* about the problem. You ship before you fully get it, and you pay interest until you go back and close that gap."
+        },
+        {
+          "type": "paragraph",
+          "text": "AI makes that gap wider by default. When I write a function by hand, the understanding comes with it; I can't type it without thinking it through. When a model writes it, I get the code without the thinking. The code works, the tests pass, and I've quietly borrowed against a future where I'll have to understand it anyway, usually while debugging it."
         },
         {
           "type": "quote",
-          "text": "A quote block, for pulling out a line worth remembering.",
-          "cite": "Optional attribution"
-        },
-        {
-          "type": "callout",
-          "text": "A callout highlights a note or warning. Posts with `\"draft\": true` are hidden from the site."
-        },
-        { "type": "divider" },
-        {
-          "type": "image",
-          "src": "certificates/m_uzair_afridi_intro_to_tensorflow.jpg",
-          "alt": "Introduction to TensorFlow certificate",
-          "caption": "Images take a path inside public/ or a full URL, plus an optional caption."
+          "text": "AI doesn't eliminate the cost of understanding code. It defers it."
         },
         {
           "type": "paragraph",
-          "text": "Delete this post (or mark it as a draft) once you've published your first real one."
+          "text": "That's not an argument against AI. Deferring cost is exactly what debt is for. The trick is knowing what you're borrowing and whether you can pay it back."
+        },
+        {
+          "type": "heading",
+          "text": "Good debt: borrowing on purpose"
+        },
+        {
+          "type": "paragraph",
+          "text": "Good debt is a conscious trade. You know what you're skipping, why, and what it'll cost to fix later. In my experience, AI-generated code falls into this bucket when:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**The scope is small and the boundaries are clear.** A parsing helper, a CLI wrapper, a data class. If it's wrong, the blast radius is one function.",
+            "**You can verify it faster than you could write it.** Reading and testing twenty lines is cheaper than writing them, as long as you actually read and test them.",
+            "**It's throwaway by design.** Prototypes, one-off migration scripts, exploratory notebooks. Code that's meant to die doesn't accumulate interest.",
+            "**It follows patterns your codebase already has.** When the model copies an existing, well-understood pattern, you already know how it behaves."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "In all of these, you could rewrite the code from scratch if you had to. That's the real test. If you couldn't, you haven't borrowed; you've outsourced."
+        },
+        {
+          "type": "heading",
+          "text": "Bad debt: borrowing without noticing"
+        },
+        {
+          "type": "paragraph",
+          "text": "Bad debt is the kind you don't know you've taken on. It shows up as:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Code nobody on the team can explain.** It works, so it gets merged. Six months later it's the load-bearing wall nobody wants to touch.",
+            "**Plausible-looking wrongness.** AI output is fluent. It handles the happy path beautifully and quietly mishandles timeouts, retries, encodings and concurrency.",
+            "**Duplication instead of reuse.** Models don't know that the helper they just reinvented already lives three files over. Now there are two, and they'll drift.",
+            "**Dependencies you didn't choose.** A suggested library gets pulled in for something the standard library already does, and now it's in your supply chain.",
+            "**Security by vibes.** Input validation, auth checks and SQL built by string concatenation look fine at a glance. They're exactly where fluent-but-wrong costs the most."
+          ]
+        },
+        {
+          "type": "callout",
+          "text": "This matters even more in regulated or air-gapped environments. When you can't just `pip install` a fix or call an external API at 2 a.m., every dependency and every unexplained line is something you'll have to support yourself."
+        },
+        {
+          "type": "heading",
+          "text": "How I keep the debt good"
+        },
+        {
+          "type": "paragraph",
+          "text": "None of this needs new tooling. It's mostly discipline:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Read every line before it's committed.** If I can't explain a line in a code review, it doesn't go in. \"The AI wrote it\" isn't an explanation.",
+            "**Make the model show its work with tests.** I ask for tests alongside the code, then check that the tests actually fail when the logic is broken. A test that can't fail is decoration.",
+            "**Search before generating.** Before asking for a new helper, I check whether the codebase already has one. This alone prevents most of the duplication.",
+            "**Keep generated chunks small.** A 20-line function I can review properly beats a 400-line module I skim.",
+            "**Be stricter where the stakes are higher.** Boilerplate gets a quick look. Auth, data handling, money and anything touching patient or customer data get a full manual review, no matter who or what wrote it.",
+            "**Write down deliberate shortcuts.** If I knowingly cut a corner, a short comment says what the limit is and what the fix would be. Documented debt gets paid; undocumented debt compounds."
+          ],
+          "ordered": true
+        },
+        {
+          "type": "heading",
+          "text": "The interest rate is understanding",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "The best way I've found to think about it: the interest rate on AI-generated code is how little you understand it. Code you've read, tested and could rewrite has almost no interest. Code you've never really looked at compounds every time someone has to work around it."
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "heading",
+          "text": "The bottom line"
+        },
+        {
+          "type": "paragraph",
+          "text": "AI coding tools aren't going away, and refusing to use them isn't a strategy. But speed you can't maintain isn't speed; it's a loan. Use AI to go faster on the things you understand, be deliberate about what you borrow, and never let \"it works\" stand in for \"I know why it works.\""
+        },
+        {
+          "type": "paragraph",
+          "text": "Take on debt, just make sure it's the kind you can pay back."
         }
       ]
     }
