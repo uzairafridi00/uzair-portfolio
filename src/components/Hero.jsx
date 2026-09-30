@@ -1,156 +1,113 @@
-import { useEffect, useRef } from 'react'
-import { ArrowDown, Sparkles } from 'lucide-react'
+import { FileText, Mail, MapPin } from 'lucide-react'
+import RotatingText from './RotatingText'
+import ContributionGraph from './ContributionGraph'
+import StackIcon from './StackIcon'
+import Tooltip from './Tooltip'
+import { GithubIcon, LinkedinIcon, XIcon } from './Icons'
+
+const MailIcon = props => <Mail {...props} strokeWidth={1.8} />
 
 export default function Hero({ data }) {
-  const { personal } = data
-  const canvasRef = useRef(null)
+  const { personal, social, skills } = data
 
-  // Animated particle field
-  useEffect(() => {
-    const canvas = canvasRef.current
-    if (!canvas) return
-    const ctx = canvas.getContext('2d')
-    let animId
+  const socials = [
+    { label: 'GitHub', href: social.github, Icon: GithubIcon },
+    { label: 'LinkedIn', href: social.linkedin, Icon: LinkedinIcon },
+    { label: 'X (Twitter)', href: social.twitter, Icon: XIcon },
+    { label: 'Email', href: `mailto:${personal.email}`, Icon: MailIcon },
+  ]
 
-    const resize = () => {
-      canvas.width = canvas.offsetWidth
-      canvas.height = canvas.offsetHeight
-    }
-    resize()
-    window.addEventListener('resize', resize)
+  const meta = [
+    { label: 'Location', Icon: MapPin, text: personal.location },
+    { label: 'Email', Icon: Mail, text: personal.email, href: `mailto:${personal.email}` },
+    { label: 'Resume', Icon: FileText, text: 'Download CV', href: `${import.meta.env.BASE_URL}${personal.cvUrl}`, external: true },
+  ]
 
-    const particles = Array.from({ length: 55 }, () => ({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      r: Math.random() * 1.5 + 0.5,
-      vx: (Math.random() - 0.5) * 0.35,
-      vy: (Math.random() - 0.5) * 0.35,
-      alpha: Math.random() * 0.5 + 0.1,
-    }))
-
-    const draw = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height)
-      const isDark = document.documentElement.classList.contains('dark')
-      const color = isDark ? '255,255,255' : '30,20,15'
-
-      particles.forEach((p, i) => {
-        p.x += p.vx
-        p.y += p.vy
-        if (p.x < 0) p.x = canvas.width
-        if (p.x > canvas.width) p.x = 0
-        if (p.y < 0) p.y = canvas.height
-        if (p.y > canvas.height) p.y = 0
-
-        ctx.beginPath()
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2)
-        ctx.fillStyle = `rgba(${color}, ${p.alpha})`
-        ctx.fill()
-
-        // Draw lines to nearby particles
-        for (let j = i + 1; j < particles.length; j++) {
-          const q = particles[j]
-          const d = Math.hypot(p.x - q.x, p.y - q.y)
-          if (d < 100) {
-            ctx.beginPath()
-            ctx.moveTo(p.x, p.y)
-            ctx.lineTo(q.x, q.y)
-            ctx.strokeStyle = `rgba(${color}, ${0.08 * (1 - d / 100)})`
-            ctx.lineWidth = 0.5
-            ctx.stroke()
-          }
-        }
-      })
-
-      animId = requestAnimationFrame(draw)
-    }
-    draw()
-
-    return () => {
-      cancelAnimationFrame(animId)
-      window.removeEventListener('resize', resize)
-    }
-  }, [])
+  const focus = skills.domains.slice(0, 3)
 
   return (
-    <section id="home" className="relative min-h-screen flex flex-col justify-center overflow-hidden">
-      {/* Canvas background */}
-      <canvas
-        ref={canvasRef}
-        className="absolute inset-0 w-full h-full opacity-60 dark:opacity-40"
-        aria-hidden="true"
-      />
-
-      {/* Gradient blobs */}
-      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-        <div className="absolute top-1/4 -left-20 w-96 h-96 bg-accent-400/15 dark:bg-accent-500/10 rounded-full blur-3xl animate-float" />
-        <div className="absolute bottom-1/4 -right-20 w-80 h-80 bg-ink-300/20 dark:bg-ink-700/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '3s' }} />
-      </div>
-
-      <div className="relative z-10 max-w-6xl mx-auto px-5 sm:px-8 py-32">
-        <div className="max-w-3xl">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-ink-100 dark:bg-ink-800 border border-ink-200 dark:border-ink-700 text-ink-600 dark:text-ink-300 text-xs font-mono mb-8 opacity-0 animate-fade-up" style={{ animationDelay: '0.1s', animationFillMode: 'forwards' }}>
-            <Sparkles size={12} className="text-accent-500" />
-            Available for new opportunities
-          </div>
-
-          {/* Heading */}
-          <h1 className="font-display font-800 text-5xl sm:text-6xl md:text-7xl leading-none tracking-tight text-ink-950 dark:text-ink-50 mb-5 opacity-0 animate-fade-up" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
+    <section id="home" className="pt-28 md:pt-36">
+      <div className="reveal mb-7 flex items-center gap-4">
+        <img
+          src={personal.avatar}
+          alt={personal.name}
+          width="64"
+          height="64"
+          className="h-[60px] w-[60px] shrink-0 rounded-xl border border-line object-cover sm:h-16 sm:w-16"
+        />
+        <div className="min-w-0 flex-1">
+          <h1 className="text-2xl font-semibold leading-tight tracking-tight text-fg sm:text-3xl md:text-[2rem]">
             {personal.name}
-            <span className="block text-accent-500">.</span>
           </h1>
-
-          {/* Title */}
-          <div className="font-mono text-sm sm:text-base text-ink-400 dark:text-ink-500 mb-5 tracking-widest uppercase opacity-0 animate-fade-up" style={{ animationDelay: '0.3s', animationFillMode: 'forwards' }}>
-            {personal.title}
-          </div>
-
-          {/* Tagline */}
-          <p className="font-body text-xl sm:text-2xl text-ink-600 dark:text-ink-400 font-light leading-relaxed max-w-xl mb-10 opacity-0 animate-fade-up" style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}>
-            {personal.tagline}
-          </p>
-
-          {/* CTAs */}
-          <div className="flex flex-wrap gap-4 opacity-0 animate-fade-up" style={{ animationDelay: '0.5s', animationFillMode: 'forwards' }}>
-            <button
-              onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-              className="px-6 py-3 rounded-xl bg-ink-950 dark:bg-ink-50 text-ink-50 dark:text-ink-950 font-body font-medium text-sm hover:bg-ink-800 dark:hover:bg-ink-200 transition-all duration-200 hover:shadow-lg hover:shadow-ink-950/20 dark:hover:shadow-ink-50/10 hover:-translate-y-0.5"
-            >
-              View Projects
-            </button>
-            <button
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="px-6 py-3 rounded-xl border border-ink-300 dark:border-ink-700 text-ink-700 dark:text-ink-300 font-body font-medium text-sm hover:border-ink-500 dark:hover:border-ink-500 hover:bg-ink-50 dark:hover:bg-ink-900 transition-all duration-200 hover:-translate-y-0.5"
-            >
-              Contact Me
-            </button>
-          </div>
-
-          {/* Stats row */}
-          <div className="flex flex-wrap gap-8 mt-16 opacity-0 animate-fade-up" style={{ animationDelay: '0.65s', animationFillMode: 'forwards' }}>
-            {[
-              { num: '5+', label: 'Years Experience' },
-              { num: '30+', label: 'Projects Shipped' },
-              { num: '10M+', label: 'Records Processed' },
-            ].map(({ num, label }) => (
-              <div key={label}>
-                <div className="font-display font-700 text-2xl text-ink-950 dark:text-ink-50">{num}</div>
-                <div className="font-body text-xs text-ink-400 dark:text-ink-500 mt-0.5">{label}</div>
-              </div>
-            ))}
+          <div className="mt-0.5 text-sm text-faint sm:text-[15px]">
+            <RotatingText items={personal.roles ?? [personal.title]} />
           </div>
         </div>
       </div>
 
-      {/* Scroll hint */}
-      <button
-        onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-ink-400 dark:text-ink-600 hover:text-ink-600 dark:hover:text-ink-400 transition-colors group"
-        aria-label="Scroll to about"
-      >
-        <span className="font-mono text-xs tracking-widest uppercase">scroll</span>
-        <ArrowDown size={14} className="animate-bounce" />
-      </button>
+      <div className="reveal mb-6 mt-10 flex flex-wrap items-start gap-x-6 gap-y-4 sm:gap-x-8">
+        {meta.map(({ label, Icon, text, href, external }) => {
+          const body = (
+            <>
+              <Icon size={15} className="shrink-0 text-faint" />
+              <span className={href ? 'underline-offset-2 group-hover:underline' : ''}>{text}</span>
+            </>
+          )
+          const cls = 'group flex items-center gap-2 text-[13.5px] font-medium text-fg-2 transition-colors sm:text-[15px]'
+          return (
+            <div key={label} className="space-y-1">
+              <div className="meta-label">{label}</div>
+              {href ? (
+                <a href={href} className={`${cls} hover:text-fg`} {...(external && { target: '_blank', rel: 'noopener noreferrer' })}>
+                  {body}
+                </a>
+              ) : (
+                <div className={cls}>{body}</div>
+              )}
+            </div>
+          )
+        })}
+      </div>
+
+      <p className="reveal mb-8 text-[13.5px] font-[450] leading-[1.85] text-muted sm:text-[15px]">
+        {personal.bio} Currently focused on{' '}
+        {focus.map((d, i) => (
+          <span key={d}>
+            <span className="text-fg-2">{d}</span>
+            {i < focus.length - 2 ? ', ' : i === focus.length - 2 ? ', and ' : ''}
+          </span>
+        ))}
+        .
+      </p>
+
+      <div className="reveal flex items-center gap-4">
+        {socials.map(({ label, href, Icon }) => (
+          <Tooltip key={label} label={label}>
+            <a
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={label}
+              className="text-faint transition-colors duration-150 hover:text-fg"
+            >
+              <Icon size={19} />
+            </a>
+          </Tooltip>
+        ))}
+      </div>
+
+      <div className="reveal mt-12">
+        <ContributionGraph username={personal.githubUser} />
+      </div>
+
+      <div className="reveal mt-10">
+        <h2 className="section-label">Tech Stack</h2>
+        <div className="flex flex-wrap items-center gap-3 opacity-95 sm:gap-4">
+          {skills.stack.map(item => (
+            <StackIcon key={item.name} item={item} />
+          ))}
+        </div>
+      </div>
     </section>
   )
 }

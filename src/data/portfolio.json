@@ -6,7 +6,16 @@
     "bio": "I'm a Machine Learning Engineer with 5+ years of experience designing and deploying AI systems at scale. My work spans LLM fine-tuning, computer vision pipelines, and production ML infrastructure. I care deeply about bridging research and real-world impact — turning frontier ideas into reliable, maintainable systems.",
     "location": "Riyadh, KSA",
     "email": "uzairafrididev@gmail.com",
-    "cvUrl": "muhammad_uzair_afridi_cv.pdf"
+    "cvUrl": "muhammad_uzair_afridi_cv.pdf",
+    "roles": [
+      "ML / AI Engineer",
+      "LLM Fine-tuner",
+      "Computer Vision Builder",
+      "Agentic AI Tinkerer",
+      "MLOps Enthusiast"
+    ],
+    "avatar": "https://github.com/uzairafridi00.png",
+    "githubUser": "uzairafridi00"
   },
   "social": {
     "github": "https://github.com/uzairafridi00",
@@ -46,51 +55,82 @@
     "stack": [
       {
         "name": "Python",
-        "category": "lang"
+        "category": "lang",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/python/python-original.svg"
       },
       {
         "name": "PyTorch",
-        "category": "ml"
+        "category": "ml",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/pytorch/pytorch-original.svg"
       },
       {
         "name": "HuggingFace",
-        "category": "ml"
+        "category": "ml",
+        "icon": "https://unpkg.com/@lobehub/icons-static-svg@1.60.0/icons/huggingface-color.svg"
       },
       {
         "name": "Tensorflow",
-        "category": "ml"
+        "category": "ml",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/tensorflow/tensorflow-original.svg"
       },
       {
         "name": "LangChain",
-        "category": "llm"
+        "category": "llm",
+        "icon": "https://unpkg.com/@lobehub/icons-static-svg@1.60.0/icons/langchain.svg",
+        "mono": true
       },
       {
         "name": "OpenAI API",
-        "category": "llm"
+        "category": "llm",
+        "icon": "https://unpkg.com/@lobehub/icons-static-svg@1.60.0/icons/openai.svg",
+        "mono": true
       },
       {
         "name": "FastAPI",
-        "category": "infra"
+        "category": "infra",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/fastapi/fastapi-original.svg"
       },
       {
         "name": "Docker",
-        "category": "infra"
+        "category": "infra",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/docker/docker-original.svg"
       },
       {
         "name": "Kubernetes",
-        "category": "infra"
+        "category": "infra",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/kubernetes/kubernetes-original.svg"
       },
       {
         "name": "AWS",
-        "category": "cloud"
+        "category": "cloud",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg",
+        "mono": true
       },
       {
         "name": "GCP",
-        "category": "cloud"
+        "category": "cloud",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/googlecloud/googlecloud-original.svg"
       },
       {
         "name": "CUDA",
-        "category": "tools"
+        "category": "tools",
+        "icon": "https://cdn.simpleicons.org/nvidia"
+      },
+      {
+        "name": "OpenCV",
+        "category": "tools",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/opencv/opencv-original.svg"
+      },
+      {
+        "name": "Ollama",
+        "category": "tools",
+        "icon": "https://unpkg.com/@lobehub/icons-static-svg@1.60.0/icons/ollama.svg",
+        "mono": true
+      },
+      {
+        "name": "Streamlit",
+        "category": "tools",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/streamlit/streamlit-original.svg"
       }
     ]
   },

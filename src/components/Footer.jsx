@@ -1,34 +1,48 @@
-import { Github, Linkedin, Twitter, Heart } from 'lucide-react'
+import { Mail } from 'lucide-react'
+import Tooltip from './Tooltip'
+import { GithubIcon, LinkedinIcon, XIcon } from './Icons'
 
 export default function Footer({ data }) {
   const { personal, social } = data
-  const year = new Date().getFullYear()
+  const [first, ...rest] = personal.name.split(' ')
+
+  const links = [
+    { label: 'X (Twitter)', href: social.twitter, Icon: XIcon },
+    { label: 'LinkedIn', href: social.linkedin, Icon: LinkedinIcon },
+    { label: 'Email', href: `mailto:${personal.email}`, Icon: Mail },
+    { label: 'GitHub', href: social.github, Icon: GithubIcon },
+  ]
 
   return (
-    <footer className="border-t border-ink-200 dark:border-ink-800 py-10">
-      <div className="max-w-6xl mx-auto px-5 sm:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <div className="font-body text-sm text-ink-400 dark:text-ink-600 flex items-center gap-1.5">
-          © {year} {personal.name} · Built with
-          <Heart size={12} className="text-accent-500 fill-accent-500 mx-0.5" />
-          & React
+    <footer className="mt-16 border-t border-line sm:mt-20">
+      <div className="mx-auto flex max-w-page flex-col items-center justify-between gap-6 px-4 py-6 sm:py-8 md:flex-row lg:px-0">
+        <div className="flex flex-col items-center gap-3 md:flex-row md:gap-6">
+          <p className="text-xs text-faint sm:text-sm">
+            &copy; {new Date().getFullYear()} {first}
+            <span className="md:hidden"> {rest.join(' ')}</span>.
+          </p>
+          <div className="hidden h-4 w-px bg-line md:block" />
+          <div className="flex items-center gap-5 sm:gap-6">
+            {['Projects', 'Experience', 'Contact'].map(s => (
+              <a key={s} href={`#${s.toLowerCase()}`} className="text-xs text-subtle transition-colors duration-200 hover:text-fg sm:text-sm">
+                {s}
+              </a>
+            ))}
+          </div>
         </div>
-
-        <div className="flex items-center gap-1">
-          {[
-            { href: social.github, Icon: Github, label: 'GitHub' },
-            { href: social.linkedin, Icon: Linkedin, label: 'LinkedIn' },
-            { href: social.twitter, Icon: Twitter, label: 'Twitter' },
-          ].map(({ href, Icon, label }) => (
-            <a
-              key={label}
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={label}
-              className="p-2 rounded-lg text-ink-400 dark:text-ink-600 hover:text-ink-700 dark:hover:text-ink-300 hover:bg-ink-100 dark:hover:bg-ink-800 transition-all"
-            >
-              <Icon size={15} />
-            </a>
+        <div className="flex gap-4 sm:gap-5">
+          {links.map(({ label, href, Icon }) => (
+            <Tooltip key={label} label={label}>
+              <a
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                className="inline-flex text-subtle transition-colors duration-200 hover:text-fg"
+              >
+                <Icon size={17} />
+              </a>
+            </Tooltip>
           ))}
         </div>
       </div>

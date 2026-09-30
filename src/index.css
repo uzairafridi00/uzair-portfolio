@@ -3,35 +3,111 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --bg: #ffffff;
+    --fg: #111111;
+    --fg-2: #1a1a1a;
+    --muted: #4d4d4d;
+    --subtle: #666666;
+    --faint: #8f8f8f;
+    --line: rgba(0, 0, 0, 0.07);
+    --line-strong: rgba(0, 0, 0, 0.18);
+    --card: rgba(0, 0, 0, 0.012);
+    --hover: rgba(0, 0, 0, 0.025);
+    --tip: #1e1e20;
+    --grid: rgba(0, 0, 0, 0.04);
+    --c0: #ebedf0;
+    --c1: #c7c7c7;
+    --c2: #9a9a9a;
+    --c3: #5e5e5e;
+    --c4: #1f1f1f;
+  }
+
+  .dark {
+    --bg: #070709;
+    --fg: #f0f0f0;
+    --fg-2: #e4e4e4;
+    --muted: #b2b2b2;
+    --subtle: #a0a0a0;
+    --faint: #737373;
+    --line: rgba(255, 255, 255, 0.07);
+    --line-strong: rgba(255, 255, 255, 0.16);
+    --card: rgba(255, 255, 255, 0.02);
+    --hover: rgba(255, 255, 255, 0.025);
+    --tip: #1e1e20;
+    --grid: rgba(255, 255, 255, 0.028);
+    --c0: rgba(255, 255, 255, 0.05);
+    --c1: #3a3a3d;
+    --c2: #66666b;
+    --c3: #a3a3a8;
+    --c4: #ededed;
+  }
+
   html {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    color-scheme: light;
+  }
+  html.dark { color-scheme: dark; }
+
+  body {
+    background: var(--bg);
+    color: var(--muted);
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
-  * {
-    box-sizing: border-box;
-  }
+  ::selection { background: rgba(127, 127, 127, 0.25); }
 
-  /* Custom scrollbar */
-  ::-webkit-scrollbar {
-    width: 5px;
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--line); border-radius: 99px; }
+}
+
+@layer components {
+  .section-label {
+    @apply font-mono text-xs uppercase tracking-widest text-faint mb-4;
   }
-  ::-webkit-scrollbar-track {
-    background: transparent;
+  .card {
+    @apply rounded-xl border border-line bg-card transition-colors duration-200;
   }
-  ::-webkit-scrollbar-thumb {
-    background: theme('colors.ink.300');
-    border-radius: 99px;
+  .meta-label {
+    @apply text-[10px] sm:text-[11px] font-medium uppercase tracking-[0.14em] text-subtle;
   }
-  .dark ::-webkit-scrollbar-thumb {
-    background: theme('colors.ink.700');
+  .field {
+    @apply w-full rounded-lg border border-line bg-hover px-3.5 py-2.5 text-sm text-fg-2 placeholder:text-faint
+      outline-none transition-colors hover:border-line-strong focus:border-line-strong;
   }
 }
 
 @layer utilities {
-  .font-700 { font-weight: 700; }
-  .font-600 { font-weight: 600; }
-  .font-500 { font-weight: 500; }
-  .font-800 { font-weight: 800; }
+  .no-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(12px);
+    filter: blur(4px);
+    transition: opacity 0.6s ease, transform 0.6s ease, filter 0.6s ease;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+
+  .blur-letter {
+    opacity: 0;
+    animation: blur-in 0.5s ease forwards;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; filter: none; transition: none; }
+    .blur-letter { opacity: 1; animation: none; }
+  }
+}
+
+@keyframes blur-in {
+  from { opacity: 0; filter: blur(6px); transform: translateY(2px); }
+  to { opacity: 1; filter: none; transform: none; }
 }

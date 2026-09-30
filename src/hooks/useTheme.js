@@ -1,22 +1,20 @@
 import { useState, useEffect } from 'react'
 
+// Dark is the default look; light is opt-in and remembered.
 export function useTheme() {
   const [dark, setDark] = useState(() => {
-    if (typeof window === 'undefined') return false
-    const stored = localStorage.getItem('theme')
-    if (stored) return stored === 'dark'
-    return window.matchMedia('(prefers-color-scheme: dark)').matches
+    try {
+      return localStorage.getItem('theme') !== 'light'
+    } catch {
+      return true
+    }
   })
 
   useEffect(() => {
-    const root = document.documentElement
-    if (dark) {
-      root.classList.add('dark')
-      localStorage.setItem('theme', 'dark')
-    } else {
-      root.classList.remove('dark')
-      localStorage.setItem('theme', 'light')
-    }
+    document.documentElement.classList.toggle('dark', dark)
+    try {
+      localStorage.setItem('theme', dark ? 'dark' : 'light')
+    } catch {}
   }, [dark])
 
   return { dark, toggle: () => setDark(d => !d) }
