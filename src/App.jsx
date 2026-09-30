@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom'
 import { useTheme } from './hooks/useTheme'
 import { useReveal } from './hooks/useReveal'
 import { useScrollOnNavigate } from './hooks/useScrollOnNavigate'
+import { useAnalytics } from './hooks/useAnalytics'
 import portfolio from './data/portfolio.json'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
@@ -29,6 +30,7 @@ export default function App() {
   const { dark, toggle } = useTheme()
   useReveal()
   useScrollOnNavigate()
+  useAnalytics()
 
   return (
     <div className="relative min-h-screen font-sans">

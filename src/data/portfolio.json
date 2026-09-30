@@ -22,6 +22,10 @@
     "linkedin": "https://linkedin.com/in/uzair-afridi00/",
     "twitter": "https://twitter.com/uzair__afridi"
   },
+  "integrations": {
+    "web3formsKey": "",
+    "goatcounter": ""
+  },
   "experience": [
     {
       "role": "AI Specialist",

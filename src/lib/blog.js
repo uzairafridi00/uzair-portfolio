@@ -28,3 +28,6 @@ export const posts = blogs.posts
   .sort((a, b) => b.date.localeCompare(a.date))
 
 export const getPost = slug => posts.find(p => p.slug === slug)
+
+// Anchor id for a heading, used by the table of contents.
+export const headingId = text => text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')

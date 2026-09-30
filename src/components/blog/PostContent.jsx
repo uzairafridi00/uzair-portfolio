@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Check, Copy, Info } from 'lucide-react'
 import RichText from './RichText'
 import { asset } from '../../lib/asset'
+import { headingId } from '../../lib/blog'
 
 function CodeBlock({ code, language }) {
   const [copied, setCopied] = useState(false)
@@ -41,7 +42,10 @@ function Block({ block }) {
     case 'heading': {
       const H = block.level === 3 ? 'h3' : 'h2'
       return (
-        <H className={`${H === 'h2' ? 'mt-10 text-xl' : 'mt-8 text-[17px]'} mb-3 font-semibold tracking-tight text-fg`}>
+        <H
+          id={headingId(block.text)}
+          className={`${H === 'h2' ? 'mt-10 text-xl' : 'mt-8 text-[17px]'} mb-3 scroll-mt-24 font-semibold tracking-tight text-fg`}
+        >
           {block.text}
         </H>
       )

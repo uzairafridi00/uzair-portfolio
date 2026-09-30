@@ -1,3 +1,4 @@
+import { Rss } from 'lucide-react'
 import { useMemo, useState } from 'react'
 import PostList from '../components/blog/PostList'
 import { posts } from '../lib/blog'
@@ -15,7 +16,10 @@ export default function Blog() {
       <div className="reveal mb-10">
         <h1 className="text-2xl font-semibold tracking-tight text-fg sm:text-3xl md:text-[2rem]">Blog</h1>
         <p className="mt-2 text-[14px] font-[450] leading-[1.8] text-muted sm:text-[15px]">
-          Notes on LLM infrastructure, RAG, inference optimization and shipping AI systems to production.
+          Notes on LLM infrastructure, RAG, inference optimization and shipping AI systems to production.{' '}
+          <a href={`${import.meta.env.BASE_URL}rss.xml`} className="inline-flex items-center gap-1 text-[13px] text-faint transition-colors hover:text-fg">
+            <Rss size={12} /> RSS
+          </a>
         </p>
       </div>
 
