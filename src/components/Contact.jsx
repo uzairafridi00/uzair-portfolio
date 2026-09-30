@@ -67,17 +67,17 @@ export default function Contact({ data }) {
           </div>
         </div>
 
-        <div className="card reveal px-6 py-5">
+        <div className="card reveal flex flex-col px-6 py-5">
           <div className="mb-4">
             <h3 className="mb-1.5 text-base font-medium text-fg-2 sm:text-lg">Send a Message</h3>
             <p className="text-sm leading-[1.6] text-muted">
               Prefer to write? Fill this out and it opens in your email app, ready to send.
             </p>
           </div>
-          <form onSubmit={handleSubmit} className="space-y-2.5">
+          <form onSubmit={handleSubmit} className="flex flex-1 flex-col gap-2.5">
             <input type="text" name="name" placeholder="Full Name" required value={form.name} onChange={update('name')} className="field" />
             <input type="email" name="email" placeholder="Email Address" required value={form.email} onChange={update('email')} className="field" />
-            <textarea name="message" rows={5} placeholder="Your Message" required value={form.message} onChange={update('message')} className="field resize-none" />
+            <textarea name="message" rows={5} placeholder="Your Message" required value={form.message} onChange={update('message')} className="field min-h-32 flex-1 resize-none" />
             <button
               type="submit"
               className="group inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg border border-line bg-hover px-4 py-2.5 text-sm font-medium text-fg-2 transition-colors duration-200 hover:border-line-strong hover:text-fg"

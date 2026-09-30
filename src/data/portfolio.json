@@ -3,7 +3,7 @@
     "name": "Uzair Afridi",
     "title": "AI Engineer",
     "tagline": "I build systems that learn, reason, and solve real problems.",
-    "bio": "I'm an AI Engineer with 5 years of experience owning AI solutions end to end: data pipelines, model development and evaluation, backend services, interfaces, deployment and operations. I've delivered production systems for the Saudi Ministry of Health and a Tier-1 downstream oil & gas client, and I specialise in on-premise and air-gapped LLM infrastructure on NVIDIA H100 hardware.",
+    "bio": "I'm an AI Engineer with 5 years of experience owning AI solutions end to end: data pipelines, model development and evaluation, backend services, interfaces, deployment and operations. I've delivered production systems for the Saudi Ministry of Health and a Tier-1 downstream oil & gas client, and I specialise in on-premise and air-gapped LLM infrastructure on NVIDIA hardware.",
     "location": "Yanbu, KSA",
     "email": "uzairafrididev@gmail.com",
     "cvUrl": "muhammad_uzair_afridi_cv.pdf",
@@ -30,7 +30,7 @@
       "location": "Yanbu, KSA",
       "highlight": "Own end-to-end delivery of an AI contract and procurement intelligence platform for a Tier-1 Saudi downstream oil & gas client, from document ingestion and retrieval to the FastAPI backend, Open WebUI interface, on-premise deployment and operations.",
       "points": [
-        "Designed on-premise inference on dual NVIDIA H100 NVL GPUs, tuning vLLM KV-cache allocation, VRAM partitioning and model placement for concurrent workloads",
+        "Designed on-premise inference on NVIDIA GPUs, tuning vLLM KV-cache allocation, VRAM partitioning and model placement for concurrent workloads",
         "Built ingestion pipelines over contract corpora with BGE-M3 embeddings, vector indexing and cross-encoder re-ranking, plus a deterministic invoice rate-compliance engine",
         "Engineered an LLM security gateway with prompt-injection filtering, PII redaction and identity-based access, hardened with rootless Podman on RHEL with SELinux",
         "Ran structured evaluations of open-weight LLMs and red-team testing of the deployed stack"
@@ -296,7 +296,7 @@
           "CI/CD",
           "RHEL / Debian",
           "SELinux",
-          "NVIDIA H100 NVL",
+          "NVIDIA GPUs",
           "Air-gapped Deployment",
           "Drift Monitoring"
         ]
