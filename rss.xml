@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+<title>Uzair Afridi · Blog</title>
+<link>https://uzairafridi00.github.io/uzair-portfolio/blog/</link>
+<description>Notes on LLM infrastructure, RAG, inference optimization and shipping AI systems to production.</description>
+<item>
+<title>Technical Debt in the Age of AI</title>
+<link>https://uzairafridi00.github.io/uzair-portfolio/blog/technical-debt-in-the-age-of-ai/</link>
+<guid>https://uzairafridi00.github.io/uzair-portfolio/blog/technical-debt-in-the-age-of-ai/</guid>
+<pubDate>Wed, 30 Sep 2026 00:00:00 GMT</pubDate>
+<description>Every time you use AI to generate code, you're taking on technical debt. The question isn't whether to avoid it, but whether it's good debt or bad debt.</description>
+</item>
+</channel>
+</rss>
