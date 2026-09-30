@@ -3,6 +3,7 @@ import RotatingText from './RotatingText'
 import StackIcon from './StackIcon'
 import Tooltip from './Tooltip'
 import { GithubIcon, LinkedinIcon, XIcon } from './Icons'
+import { asset } from '../lib/asset'
 
 const MailIcon = props => <Mail {...props} strokeWidth={1.8} />
 
@@ -28,7 +29,7 @@ export default function Hero({ data }) {
     <section id="home" className="pt-28 md:pt-36">
       <div className="reveal mb-7 flex items-center gap-4">
         <img
-          src={personal.avatar}
+          src={asset(personal.avatar)}
           alt={personal.name}
           width="64"
           height="64"
