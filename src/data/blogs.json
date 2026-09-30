@@ -1,0 +1,63 @@
+{
+  "posts": [
+    {
+      "slug": "writing-posts-for-this-blog",
+      "title": "Writing Posts for This Blog",
+      "date": "2026-09-29",
+      "summary": "A reference post showing every content block the blog supports, from headings and lists to code, quotes and images.",
+      "tags": ["Meta", "Guide"],
+      "draft": false,
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Every post on this site lives in `src/data/blogs.json`. Each one is a list of **content blocks**, and this post uses each block type once so you can copy whatever you need."
+        },
+        { "type": "heading", "text": "Inline formatting" },
+        {
+          "type": "paragraph",
+          "text": "Inside any text you can write **bold**, *italic*, `inline code`, and [links](https://github.com/uzairafridi00). Links starting with `/` stay inside the site, like [the blog index](/blog)."
+        },
+        { "type": "heading", "level": 3, "text": "Lists" },
+        {
+          "type": "list",
+          "items": [
+            "Set `ordered` to `true` for a numbered list",
+            "Each item supports **inline formatting** too",
+            "Keep items short, one idea each"
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": ["Write the post", "Set `draft` to `false`", "Run `npm run deploy`"]
+        },
+        { "type": "heading", "text": "Code" },
+        {
+          "type": "code",
+          "language": "python",
+          "code": "from vllm import LLM, SamplingParams\n\nllm = LLM(model=\"Qwen/Qwen2.5-7B-Instruct\")\nout = llm.generate([\"Hello!\"], SamplingParams(max_tokens=64))\nprint(out[0].outputs[0].text)"
+        },
+        {
+          "type": "quote",
+          "text": "A quote block, for pulling out a line worth remembering.",
+          "cite": "Optional attribution"
+        },
+        {
+          "type": "callout",
+          "text": "A callout highlights a note or warning. Posts with `\"draft\": true` are hidden from the site."
+        },
+        { "type": "divider" },
+        {
+          "type": "image",
+          "src": "certificates/m_uzair_afridi_intro_to_tensorflow.jpg",
+          "alt": "Introduction to TensorFlow certificate",
+          "caption": "Images take a path inside public/ or a full URL, plus an optional caption."
+        },
+        {
+          "type": "paragraph",
+          "text": "Delete this post (or mark it as a draft) once you've published your first real one."
+        }
+      ]
+    }
+  ]
+}

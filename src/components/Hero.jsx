@@ -1,6 +1,5 @@
 import { FileText, Mail, MapPin } from 'lucide-react'
 import RotatingText from './RotatingText'
-import ContributionGraph from './ContributionGraph'
 import StackIcon from './StackIcon'
 import Tooltip from './Tooltip'
 import { GithubIcon, LinkedinIcon, XIcon } from './Icons'
@@ -97,10 +96,6 @@ export default function Hero({ data }) {
       </div>
 
       <div className="reveal mt-12">
-        <ContributionGraph username={personal.githubUser} />
-      </div>
-
-      <div className="reveal mt-10">
         <h2 className="section-label">Tech Stack</h2>
         <div className="flex flex-wrap items-center gap-3 opacity-95 sm:gap-4">
           {skills.stack.map(item => (

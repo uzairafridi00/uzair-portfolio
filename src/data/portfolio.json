@@ -1,18 +1,18 @@
 {
   "personal": {
     "name": "Uzair Afridi",
-    "title": "ML / AI Engineer",
+    "title": "AI Engineer",
     "tagline": "I build systems that learn, reason, and solve real problems.",
-    "bio": "I'm a Machine Learning Engineer with 5+ years of experience designing and deploying AI systems at scale. My work spans LLM fine-tuning, computer vision pipelines, and production ML infrastructure. I care deeply about bridging research and real-world impact — turning frontier ideas into reliable, maintainable systems.",
-    "location": "Riyadh, KSA",
+    "bio": "I'm an AI Engineer with 5 years of experience owning AI solutions end to end: data pipelines, model development and evaluation, backend services, interfaces, deployment and operations. I've delivered production systems for the Saudi Ministry of Health and a Tier-1 downstream oil & gas client, and I specialise in on-premise and air-gapped LLM infrastructure on NVIDIA H100 hardware.",
+    "location": "Yanbu, KSA",
     "email": "uzairafrididev@gmail.com",
     "cvUrl": "muhammad_uzair_afridi_cv.pdf",
     "roles": [
-      "ML / AI Engineer",
-      "LLM Fine-tuner",
-      "Computer Vision Builder",
-      "Agentic AI Tinkerer",
-      "MLOps Enthusiast"
+      "AI Engineer",
+      "LLM Infrastructure",
+      "RAG Systems Builder",
+      "On-prem & Air-gapped AI",
+      "MLOps Engineer"
     ],
     "avatar": "https://github.com/uzairafridi00.png",
     "githubUser": "uzairafridi00"
@@ -24,113 +24,319 @@
   },
   "experience": [
     {
-      "role": "AI Engineer",
-      "company": "JMM Technologies",
-      "period": "2024 - 2026",
-      "highlight": "ML pipelines, MLops, LLM fine-tuning"
+      "role": "AI Specialist",
+      "company": "Al Sawab Commercial Company",
+      "period": "Jun 2026 – Present",
+      "location": "Yanbu, KSA",
+      "highlight": "Own end-to-end delivery of an AI contract and procurement intelligence platform for a Tier-1 Saudi downstream oil & gas client, from document ingestion and retrieval to the FastAPI backend, Open WebUI interface, on-premise deployment and operations.",
+      "points": [
+        "Designed on-premise inference on dual NVIDIA H100 NVL GPUs, tuning vLLM KV-cache allocation, VRAM partitioning and model placement for concurrent workloads",
+        "Built ingestion pipelines over contract corpora with BGE-M3 embeddings, vector indexing and cross-encoder re-ranking, plus a deterministic invoice rate-compliance engine",
+        "Engineered an LLM security gateway with prompt-injection filtering, PII redaction and identity-based access, hardened with rootless Podman on RHEL with SELinux",
+        "Ran structured evaluations of open-weight LLMs and red-team testing of the deployed stack"
+      ]
     },
     {
-      "role": "ML Engineer",
+      "role": "AI Engineer (Public Sector Contract)",
+      "company": "Tech Track — Ministry of Health Hajj Project",
+      "period": "Mar 2026 – May 2026",
+      "location": "Riyadh, KSA",
+      "highlight": "Delivered a RAG-powered case report generation system for the Ministry of Health's Hajj deceased management workflow, grounded in MoH medical protocols and regulatory guidelines.",
+      "points": [
+        "Designed the ingestion pipeline for unstructured medical and procedural documents, tuning retrieval for factual accuracy",
+        "Deployed locally hosted open-source LLMs to meet data residency and sovereignty requirements, with zero external API dependencies",
+        "Containerized the full stack with Docker for air-gapped deployment on on-premise Debian servers"
+      ]
+    },
+    {
+      "role": "AI Engineer",
+      "company": "JMM Technologies",
+      "period": "Jun 2024 – Jan 2026",
+      "location": "Peshawar, Pakistan",
+      "highlight": "Built RAG pipelines, agentic systems and ML microservices across enterprise workflows on Azure and AWS.",
+      "points": [
+        "Improved enterprise knowledge retrieval accuracy by 70% with LangChain, LangGraph and Pinecone through chunking, embedding and re-ranking optimization",
+        "Scaled AI across 3+ enterprise workflows with Dockerized FastAPI microservices and drift monitoring",
+        "Delivered ~2.1% RMSE on industrial time-series forecasting with Random Forest and XGBoost ensembles"
+      ]
+    },
+    {
+      "role": "Machine Learning Engineer",
       "company": "DevMaze",
-      "period": "2023 – 2024",
-      "highlight": "Data pipeline automation and model evaluation frameworks"
+      "period": "Jun 2023 – May 2024",
+      "location": "Peshawar, Pakistan",
+      "highlight": "Built semantic search, RAG systems and Transformer-based NLP pipelines with Hugging Face and PyTorch.",
+      "points": [
+        "Improved model performance by 25% on regression and classification tasks through feature engineering and cross-validation",
+        "Established reproducible experimentation with versioned data pipelines and experiment tracking"
+      ]
     },
     {
       "role": "Junior Python Developer",
       "company": "Ray Media Group",
-      "period": "2021 – 2023",
-      "highlight": "Web Development and Automation"
+      "period": "Jun 2021 – Jun 2023",
+      "location": "Peshawar, Pakistan",
+      "highlight": "Built Python backend services and REST API integrations powering automated analytics pipelines.",
+      "points": [
+        "Optimized SQL queries and schemas on PostgreSQL and MySQL for downstream modelling and analysis"
+      ]
     }
   ],
   "skills": {
     "domains": [
+      "On-prem LLM Infrastructure",
+      "RAG & Agentic Systems",
+      "Inference Optimization",
       "Large Language Models",
       "Computer Vision",
-      "Agentic AI",
-      "NLP & Text Generation",
-      "Generative AI",
-      "MLOps & Deployment",
-      "Model Fine-tuning"
+      "MLOps & Deployment"
     ],
     "stack": [
       {
         "name": "Python",
-        "category": "lang",
         "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/python/python-original.svg"
       },
       {
         "name": "PyTorch",
-        "category": "ml",
         "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/pytorch/pytorch-original.svg"
       },
       {
-        "name": "HuggingFace",
-        "category": "ml",
-        "icon": "https://unpkg.com/@lobehub/icons-static-svg@1.60.0/icons/huggingface-color.svg"
-      },
-      {
         "name": "Tensorflow",
-        "category": "ml",
         "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/tensorflow/tensorflow-original.svg"
       },
       {
-        "name": "LangChain",
-        "category": "llm",
-        "icon": "https://unpkg.com/@lobehub/icons-static-svg@1.60.0/icons/langchain.svg",
-        "mono": true
+        "name": "HuggingFace",
+        "icon": "https://unpkg.com/@lobehub/icons-static-svg@1.60.0/icons/huggingface-color.svg"
       },
       {
-        "name": "OpenAI API",
-        "category": "llm",
-        "icon": "https://unpkg.com/@lobehub/icons-static-svg@1.60.0/icons/openai.svg",
-        "mono": true
+        "name": "Scikit-learn",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/scikitlearn/scikitlearn-original.svg"
       },
       {
-        "name": "FastAPI",
-        "category": "infra",
-        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/fastapi/fastapi-original.svg"
-      },
-      {
-        "name": "Docker",
-        "category": "infra",
-        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/docker/docker-original.svg"
-      },
-      {
-        "name": "Kubernetes",
-        "category": "infra",
-        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/kubernetes/kubernetes-original.svg"
-      },
-      {
-        "name": "AWS",
-        "category": "cloud",
-        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg",
-        "mono": true
-      },
-      {
-        "name": "GCP",
-        "category": "cloud",
-        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/googlecloud/googlecloud-original.svg"
-      },
-      {
-        "name": "CUDA",
-        "category": "tools",
-        "icon": "https://cdn.simpleicons.org/nvidia"
-      },
-      {
-        "name": "OpenCV",
-        "category": "tools",
-        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/opencv/opencv-original.svg"
+        "name": "vLLM",
+        "icon": "https://unpkg.com/@lobehub/icons-static-svg@1.60.0/icons/vllm-color.svg"
       },
       {
         "name": "Ollama",
-        "category": "tools",
         "icon": "https://unpkg.com/@lobehub/icons-static-svg@1.60.0/icons/ollama.svg",
         "mono": true
       },
       {
+        "name": "LangChain",
+        "icon": "https://unpkg.com/@lobehub/icons-static-svg@1.60.0/icons/langchain.svg",
+        "mono": true
+      },
+      {
+        "name": "LangGraph",
+        "icon": "https://unpkg.com/@lobehub/icons-static-svg@1.60.0/icons/langgraph.svg",
+        "mono": true
+      },
+      {
+        "name": "Open WebUI",
+        "icon": "https://unpkg.com/@lobehub/icons-static-svg@1.60.0/icons/openwebui.svg",
+        "mono": true
+      },
+      {
+        "name": "OpenAI API",
+        "icon": "https://unpkg.com/@lobehub/icons-static-svg@1.60.0/icons/openai.svg",
+        "mono": true
+      },
+      {
+        "name": "Mistral",
+        "icon": "https://unpkg.com/@lobehub/icons-static-svg@1.60.0/icons/mistral-color.svg"
+      },
+      {
+        "name": "Qwen",
+        "icon": "https://unpkg.com/@lobehub/icons-static-svg@1.60.0/icons/qwen-color.svg"
+      },
+      {
+        "name": "Gemini",
+        "icon": "https://unpkg.com/@lobehub/icons-static-svg@1.60.0/icons/gemini-color.svg"
+      },
+      {
+        "name": "FastAPI",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/fastapi/fastapi-original.svg"
+      },
+      {
+        "name": "Django",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/django/django-plain.svg",
+        "mono": true
+      },
+      {
+        "name": "PostgreSQL",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/postgresql/postgresql-original.svg"
+      },
+      {
+        "name": "MySQL",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/mysql/mysql-original.svg"
+      },
+      {
+        "name": "Qdrant",
+        "icon": "https://cdn.simpleicons.org/qdrant"
+      },
+      {
+        "name": "Docker",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/docker/docker-original.svg"
+      },
+      {
+        "name": "Podman",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/podman/podman-original.svg"
+      },
+      {
+        "name": "Kubernetes",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/kubernetes/kubernetes-original.svg"
+      },
+      {
+        "name": "MLflow",
+        "icon": "https://cdn.simpleicons.org/mlflow"
+      },
+      {
+        "name": "DVC",
+        "icon": "https://cdn.simpleicons.org/dvc"
+      },
+      {
+        "name": "Red Hat",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/redhat/redhat-original.svg"
+      },
+      {
+        "name": "Linux",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/linux/linux-original.svg"
+      },
+      {
+        "name": "AWS",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg",
+        "mono": true
+      },
+      {
+        "name": "Azure",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/azure/azure-original.svg"
+      },
+      {
+        "name": "GCP",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/googlecloud/googlecloud-original.svg"
+      },
+      {
+        "name": "CUDA",
+        "icon": "https://cdn.simpleicons.org/nvidia"
+      },
+      {
+        "name": "OpenCV",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/opencv/opencv-original.svg"
+      },
+      {
         "name": "Streamlit",
-        "category": "tools",
         "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/streamlit/streamlit-original.svg"
+      }
+    ],
+    "groups": [
+      {
+        "name": "Generative AI & LLMs",
+        "items": [
+          "vLLM",
+          "Ollama",
+          "Open WebUI",
+          "LangChain",
+          "LangGraph",
+          "PEFT / LoRA / QLoRA",
+          "LLaMA",
+          "Mistral",
+          "Gemma",
+          "Qwen",
+          "Azure OpenAI",
+          "Gemini",
+          "Prompt Engineering",
+          "Model Evaluation"
+        ]
+      },
+      {
+        "name": "Inference & Serving",
+        "items": [
+          "KV-cache Tuning",
+          "VRAM Partitioning",
+          "Quantization",
+          "Batching & Concurrency",
+          "Latency / Throughput Benchmarking",
+          "Multi-model GPU Placement"
+        ]
+      },
+      {
+        "name": "RAG & Retrieval",
+        "items": [
+          "RAG",
+          "Agentic RAG",
+          "Graph RAG",
+          "RAFT",
+          "Chunking Strategies",
+          "BGE-M3 Embeddings",
+          "Cross-encoder Re-ranking",
+          "Hybrid Search",
+          "Vector Indexing"
+        ]
+      },
+      {
+        "name": "ML & Deep Learning",
+        "items": [
+          "PyTorch",
+          "TensorFlow",
+          "Hugging Face Transformers",
+          "Scikit-learn",
+          "XGBoost",
+          "Random Forest",
+          "Feature Engineering",
+          "Time-Series Forecasting"
+        ]
+      },
+      {
+        "name": "Infrastructure & MLOps",
+        "items": [
+          "Docker",
+          "Podman (rootless)",
+          "MLflow",
+          "DVC",
+          "CI/CD",
+          "RHEL / Debian",
+          "SELinux",
+          "NVIDIA H100 NVL",
+          "Air-gapped Deployment",
+          "Drift Monitoring"
+        ]
+      },
+      {
+        "name": "Backend & Data",
+        "items": [
+          "Python",
+          "FastAPI",
+          "Django",
+          "Flask",
+          "SQL",
+          "REST APIs",
+          "PostgreSQL",
+          "MySQL",
+          "Pinecone",
+          "ChromaDB",
+          "Qdrant",
+          "Pandas",
+          "NumPy"
+        ]
+      },
+      {
+        "name": "Security & Compliance",
+        "items": [
+          "Prompt-injection Filtering",
+          "PII Redaction",
+          "LLM Guardrails",
+          "Data Residency",
+          "Red-team Testing",
+          "Role-based Access"
+        ]
+      },
+      {
+        "name": "Cloud",
+        "items": [
+          "AWS",
+          "Azure",
+          "On-prem Private Cloud"
+        ]
       }
     ]
   },
@@ -310,5 +516,10 @@
       "date": "2021",
       "image": "certificates/m_uzair_afridi_ibm_ai.jpg"
     }
-  ]
+  ],
+  "education": {
+    "degree": "BS Software Engineering",
+    "school": "IMSciences University",
+    "location": "Peshawar, Pakistan"
+  }
 }

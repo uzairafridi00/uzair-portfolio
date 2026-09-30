@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { Mail } from 'lucide-react'
 import Tooltip from './Tooltip'
 import { GithubIcon, LinkedinIcon, XIcon } from './Icons'
@@ -23,10 +24,15 @@ export default function Footer({ data }) {
           </p>
           <div className="hidden h-4 w-px bg-line md:block" />
           <div className="flex items-center gap-5 sm:gap-6">
-            {['Projects', 'Experience', 'Contact'].map(s => (
-              <a key={s} href={`#${s.toLowerCase()}`} className="text-xs text-subtle transition-colors duration-200 hover:text-fg sm:text-sm">
-                {s}
-              </a>
+            {[
+              ['Projects', '/#projects'],
+              ['Experience', '/#experience'],
+              ['Blog', '/blog'],
+              ['Contact', '/#contact'],
+            ].map(([label, to]) => (
+              <Link key={label} to={to} className="text-xs text-subtle transition-colors duration-200 hover:text-fg sm:text-sm">
+                {label}
+              </Link>
             ))}
           </div>
         </div>

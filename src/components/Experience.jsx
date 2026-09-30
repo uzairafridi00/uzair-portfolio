@@ -41,6 +41,19 @@ export default function Experience({ data }) {
           ))}
         </ol>
       </div>
+      {data.education && (
+        <div className="reveal mt-12">
+          <h3 className="section-label">Education</h3>
+          <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+            <div className="flex flex-wrap items-baseline gap-2">
+              <span className="text-[14px] font-medium tracking-tight text-fg sm:text-[15px]">{data.education.degree}</span>
+              <span className="text-faint">&middot;</span>
+              <span className="text-[12.5px] font-[450] text-muted sm:text-[13.5px]">{data.education.school}</span>
+            </div>
+            <span className="text-[12px] text-faint sm:text-[12.5px]">{data.education.location}</span>
+          </div>
+        </div>
+      )}
     </section>
   )
 }

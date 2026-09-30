@@ -1,13 +1,14 @@
+import { Route, Routes } from 'react-router-dom'
 import { useTheme } from './hooks/useTheme'
 import { useReveal } from './hooks/useReveal'
+import { useScrollOnNavigate } from './hooks/useScrollOnNavigate'
 import portfolio from './data/portfolio.json'
 import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import Projects from './components/Projects'
-import Experience from './components/Experience'
-import Certificates from './components/Certificates'
-import Contact from './components/Contact'
 import Footer from './components/Footer'
+import Home from './pages/Home'
+import Blog from './pages/Blog'
+import BlogPost from './pages/BlogPost'
+import NotFound from './pages/NotFound'
 
 function GridBackground() {
   return (
@@ -27,17 +28,19 @@ function GridBackground() {
 export default function App() {
   const { dark, toggle } = useTheme()
   useReveal()
+  useScrollOnNavigate()
 
   return (
     <div className="relative min-h-screen font-sans">
       <GridBackground />
       <Navbar dark={dark} toggleDark={toggle} />
       <main className="relative z-10 mx-auto w-full max-w-page px-6 lg:px-0">
-        <Hero data={portfolio} />
-        <Projects data={portfolio} />
-        <Experience data={portfolio} />
-        <Certificates data={portfolio} />
-        <Contact data={portfolio} />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
       </main>
       <Footer data={portfolio} />
     </div>

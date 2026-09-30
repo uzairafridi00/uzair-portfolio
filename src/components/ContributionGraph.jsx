@@ -1,4 +1,5 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useMemo, useState } from 'react'
+import { useFetchJson } from '../hooks/useFetchJson'
 
 const CELL = 11
 const GAP = 3
@@ -6,20 +7,12 @@ const TOP = 18
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 const month = d => new Date(d.date).getUTCMonth()
 
+export const contributionsUrl = username => `https://github-contributions-api.jogruber.de/v4/${username}?y=last`
+
 // Last-year GitHub activity, pulled from a public proxy of the contributions calendar.
 export default function ContributionGraph({ username }) {
-  const [data, setData] = useState(null)
-  const [failed, setFailed] = useState(false)
+  const { data, error } = useFetchJson(contributionsUrl(username))
   const [hover, setHover] = useState(null)
-
-  useEffect(() => {
-    let cancelled = false
-    fetch(`https://github-contributions-api.jogruber.de/v4/${username}?y=last`)
-      .then(r => (r.ok ? r.json() : Promise.reject()))
-      .then(json => !cancelled && setData(json))
-      .catch(() => !cancelled && setFailed(true))
-    return () => { cancelled = true }
-  }, [username])
 
   const weeks = useMemo(() => {
     const days = data?.contributions
@@ -35,7 +28,7 @@ export default function ContributionGraph({ username }) {
     return out
   }, [data])
 
-  if (failed) return null
+  if (error) return null
 
   const width = weeks.length * (CELL + GAP) - GAP
   const height = TOP + 7 * (CELL + GAP) - GAP

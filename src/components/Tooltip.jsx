@@ -1,7 +1,7 @@
 // Hover label that floats above its child, styled like the reference site.
-export default function Tooltip({ label, children }) {
+export default function Tooltip({ label, children, className = 'inline-flex' }) {
   return (
-    <span className="group/tip relative inline-flex">
+    <span className={`group/tip relative ${className}`}>
       {children}
       <span
         role="tooltip"

@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Maximize2, X } from 'lucide-react'
-
-const asset = path => (/^https?:/.test(path) ? path : `${import.meta.env.BASE_URL}${path}`)
+import { asset } from '../lib/asset'
 
 function Lightbox({ cert, onClose }) {
   useEffect(() => {
