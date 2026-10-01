@@ -158,6 +158,14 @@
         "icon": "https://unpkg.com/@lobehub/icons-static-svg@1.60.0/icons/gemini-color.svg"
       },
       {
+        "name": "Claude Code",
+        "icon": "https://unpkg.com/@lobehub/icons-static-svg@1.95.1/icons/claudecode-color.svg"
+      },
+      {
+        "name": "Codex",
+        "icon": "https://unpkg.com/@lobehub/icons-static-svg@1.95.1/icons/codex-color.svg"
+      },
+      {
         "name": "FastAPI",
         "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/fastapi/fastapi-original.svg"
       },
